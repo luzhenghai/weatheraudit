@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WeatherAudit — Quzhou forecast card</title><style>
+:root { --navy:#1F3864; --teal:#2a9d8f; --amber:#e9c46a; --red:#a61b1b; --line:#e6e9ef; --bg:#f6f8fb; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:#1c2733; margin:0; padding:24px; }
+.wrap { max-width:640px; margin:0 auto; }
+h1 { font-size:20px; color:var(--navy); margin:0 0 2px; }
+.sub { color:#6a7a8c; font-size:12.5px; margin-bottom:18px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 1px 3px rgba(20,40,80,.06); }
+.row { display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); }
+.row:last-child { border-bottom:none; }
+.k { color:#6a7a8c; font-size:13px; }
+.v { font-size:15px; font-weight:600; color:var(--navy); }
+.v.hl { font-size:26px; color:var(--teal); }
+.v.warn { color:var(--amber); }
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:12px; font-weight:700; }
+.badge.high { background:#e3f4f0; color:var(--teal); }
+.badge.mid { background:#f0f1f4; color:#5a6a7a; }
+.badge.low { background:#fdf0e4; color:#b0761c; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+.tile { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px; }
+.tile h3 { font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:#8a97a5; margin:0 0 6px; }
+.tile .big { font-size:20px; font-weight:700; color:var(--navy); }
+.tile .note { font-size:11.5px; color:#6a7a8c; margin-top:3px; line-height:1.4; }
+.foot { font-size:11px; color:#8a97a5; margin-top:16px; line-height:1.5; }
+</style></head><body><div class="wrap">
+<h1>WeatherAudit · forecast card (historical replay of 2026-09-22)</h1>
+<div class="sub">Quzhou (GHCN CHM00058633) · Cfa climate · replay of a past day, built only from data available 8+ days earlier · prototype, not a weather service</div>
+<div class="card">
+  <div class="row"><span class="k">Default model forecast (Tmax)</span><span class="v">33.6 °C</span></div>
+  <div class="row"><span class="k">Mean of 3 weather models</span><span class="v">31.4 °C</span></div>
+  <div class="row"><span class="k">Corrected (30-day rolling bias)</span><span class="v hl">32.1 °C</span></div>
+  <div class="row"><span class="k">80% interval (rolling conformal)</span><span class="v">30.4 – 33.9 °C</span></div>
+  <div class="row"><span class="k">Trust score</span><span class="v warn">43/100</span></div>
+  <div class="row"><span class="k">What the station then measured</span><span class="v">29.9 °C (outside the interval)</span></div>
+</div>
+<div class="grid">
+  <div class="tile"><h3>Model agreement</h3><div class="big">3 models</div><div class="note">spread today: 1.26 °C</div></div>
+  <div class="tile"><h3>Long-term trend</h3><div class="big">+0.23 °C/decade</div><div class="note">66 years, 1951–2022</div></div>
+  <div class="tile"><h3>Interval coverage</h3><div class="big">80%</div><div class="note">target 80%, over 254 test days (a static interval only reached 55%)</div></div>
+  <div class="tile"><h3>Trust audit</h3><div class="big">passes</div><div class="note">low-trust days err 2.47°C vs high-trust 1.28°C</div></div>
+</div>
+<div class="foot">This card replays the most recent audited day; it is not a live forecast. The correction removes the forecast's mean error over a 30-day window that ends 8 days earlier; the interval is the 80th percentile of the recent absolute errors. The trust score combines model agreement with the forecast's recent accuracy. Prototype — not for safety-critical decisions.</div>
+</div></body></html>

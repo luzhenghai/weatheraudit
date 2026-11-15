@@ -1,0 +1,3363 @@
+{
+  "primary": "Quzhou",
+  "params": {
+    "TEST_DAYS": 305,
+    "N_EST": 400,
+    "C_UMB": 1,
+    "C_RAIN": 6,
+    "RAIN_MM": 1.0,
+    "CONF_LEVEL": 0.8,
+    "MODELS": [
+      "ecmwf_ifs025",
+      "gfs_seamless",
+      "icon_seamless"
+    ],
+    "N_BOOT": 4000,
+    "BLOCK": 7,
+    "AD_WIN": 90,
+    "N_SEEDS": 10,
+    "XE_JUMP_MIN": 0.5,
+    "XE_T_MIN": 2.0,
+    "XE_MIN_SEG": 90,
+    "XE_LOCAL_WIN": 150,
+    "XE_N_PERM": 400,
+    "XE_TOL_DAYS": 45
+  },
+  "cities": {
+    "Quzhou": {
+      "name": "Quzhou",
+      "sid": "CHM00058633",
+      "train_days": 1091,
+      "temp_test_days": 254,
+      "rain_train_days": 235,
+      "rain_test_days": 59,
+      "temp_train_span": [
+        "2022-09-19",
+        "2025-11-20"
+      ],
+      "temp_test_span": [
+        "2025-11-21",
+        "2026-09-22"
+      ],
+      "rain_test_span": [
+        "2026-07-01",
+        "2026-09-22"
+      ],
+      "raw_mae": 1.86,
+      "lin_mae": 3.0,
+      "gb_mae": 1.31,
+      "gb_better": 0.76,
+      "raw_hot_mae": 0.9,
+      "gb_hot_mae": 1.38,
+      "heat": {
+        "th": 36.1,
+        "n_days": 2,
+        "raw_caught": 1,
+        "gb_caught": 0,
+        "raw_false": 0,
+        "gb_false": 1
+      },
+      "decomp": {
+        "total": 1.86,
+        "model_grid": 0.13,
+        "grid_to_station": 1.77
+      },
+      "brier_base": 0.2372,
+      "brier_raw": 0.3595,
+      "brier_gb": 0.3296,
+      "auc_raw": 0.655,
+      "auc_gb": 0.622,
+      "th_raw": 0.4,
+      "th_gb": 0.34,
+      "cost_always": 1000.0,
+      "cost_never": 2237.0,
+      "cost_raw": 898.0,
+      "cost_gb": 898.0,
+      "cost_gb_cal": 695.0,
+      "rain_rate": 0.373
+    },
+    "Shanghai": {
+      "name": "Shanghai",
+      "sid": "CHM00058362",
+      "train_days": 1100,
+      "temp_test_days": 256,
+      "rain_train_days": 235,
+      "rain_test_days": 56,
+      "temp_train_span": [
+        "2022-09-19",
+        "2025-11-20"
+      ],
+      "temp_test_span": [
+        "2025-11-21",
+        "2026-09-22"
+      ],
+      "rain_test_span": [
+        "2026-07-01",
+        "2026-09-22"
+      ],
+      "raw_mae": 0.98,
+      "lin_mae": 1.96,
+      "gb_mae": 0.94,
+      "gb_better": 0.586,
+      "raw_hot_mae": 1.02,
+      "gb_hot_mae": 1.94,
+      "heat": {
+        "th": 34.3,
+        "n_days": 5,
+        "raw_caught": 4,
+        "gb_caught": 3,
+        "raw_false": 1,
+        "gb_false": 1
+      },
+      "decomp": {
+        "total": 0.98,
+        "model_grid": 0.08,
+        "grid_to_station": 0.93
+      },
+      "brier_base": 0.2134,
+      "brier_raw": 0.3915,
+      "brier_gb": 0.2267,
+      "auc_raw": 0.651,
+      "auc_gb": 0.59,
+      "th_raw": 0.66,
+      "th_gb": 0.24,
+      "cost_always": 1000.0,
+      "cost_never": 1821.0,
+      "cost_raw": 911.0,
+      "cost_gb": 929.0,
+      "cost_gb_cal": 911.0,
+      "rain_rate": 0.304
+    },
+    "Osaka": {
+      "name": "Osaka",
+      "sid": "JAM00047772",
+      "train_days": 375,
+      "temp_test_days": 300,
+      "rain_train_days": 240,
+      "rain_test_days": 129,
+      "temp_train_span": [
+        "2023-03-03",
+        "2026-01-04"
+      ],
+      "temp_test_span": [
+        "2026-01-05",
+        "2026-11-06"
+      ],
+      "rain_test_span": [
+        "2026-06-30",
+        "2026-11-06"
+      ],
+      "raw_mae": 1.52,
+      "lin_mae": 0.68,
+      "gb_mae": 0.65,
+      "gb_better": 0.823,
+      "raw_hot_mae": 2.22,
+      "gb_hot_mae": 0.7,
+      "heat": {
+        "th": 34.5,
+        "n_days": 30,
+        "raw_caught": 9,
+        "gb_caught": 25,
+        "raw_false": 0,
+        "gb_false": 3
+      },
+      "decomp": {
+        "total": 1.52,
+        "model_grid": 1.58,
+        "grid_to_station": 1.01
+      },
+      "brier_base": 0.2292,
+      "brier_raw": 0.3394,
+      "brier_gb": 0.1932,
+      "auc_raw": 0.689,
+      "auc_gb": 0.723,
+      "th_raw": 0.1,
+      "th_gb": 0.22,
+      "cost_always": 1000.0,
+      "cost_never": 2000.0,
+      "cost_raw": 767.0,
+      "cost_gb": 791.0,
+      "cost_gb_cal": 791.0,
+      "rain_rate": 0.333
+    }
+  },
+  "climate": {
+    "Quzhou": {
+      "koppen": {
+        "grp": "C",
+        "sub": "f",
+        "sub2": "a",
+        "code": "Cfa",
+        "t_ann": 18.1,
+        "t_warm": 29.7,
+        "t_cold": 6.1,
+        "p_ann": 1693.0
+      },
+      "trend_tmax": {
+        "years": 66,
+        "first_year": 1951,
+        "last_year": 2022,
+        "slope_decade": 0.232,
+        "r": 0.57,
+        "p": 5.933654783176105e-07,
+        "change_total": 1.65
+      }
+    },
+    "Shanghai": {
+      "koppen": {
+        "grp": "C",
+        "sub": "f",
+        "sub2": "a",
+        "code": "Cfa",
+        "t_ann": 17.5,
+        "t_warm": 29.3,
+        "t_cold": 5.2,
+        "p_ann": 1208.0
+      },
+      "trend_tmax": {
+        "years": 26,
+        "first_year": 1991,
+        "last_year": 2022,
+        "slope_decade": 0.939,
+        "r": 0.81,
+        "p": 4.2996375126391103e-07,
+        "change_total": 2.91
+      }
+    },
+    "Osaka": {
+      "koppen": {
+        "grp": "C",
+        "sub": "f",
+        "sub2": "a",
+        "code": "Cfa",
+        "t_ann": 17.5,
+        "t_warm": 29.3,
+        "t_cold": 5.6,
+        "p_ann": 1126.0
+      },
+      "trend_tmax": {
+        "years": 45,
+        "first_year": 1953,
+        "last_year": 2025,
+        "slope_decade": 0.175,
+        "r": 0.53,
+        "p": 0.00019635414499554922,
+        "change_total": 1.26
+      }
+    }
+  },
+  "multimodel": {
+    "Quzhou": {
+      "available": true,
+      "per_model": {
+        "ECMWF IFS": {
+          "n": 254,
+          "mae": 1.72
+        },
+        "GFS": {
+          "n": 254,
+          "mae": 1.42
+        },
+        "ICON": {
+          "n": 254,
+          "mae": 1.02
+        }
+      },
+      "n_test": 254,
+      "consensus_mae": 1.17,
+      "best_single": "ICON",
+      "best_single_mae": 1.02,
+      "raw_mae": 1.86,
+      "spread_mean": 1.11
+    },
+    "Shanghai": {
+      "available": true,
+      "per_model": {
+        "ECMWF IFS": {
+          "n": 256,
+          "mae": 1.66
+        },
+        "GFS": {
+          "n": 256,
+          "mae": 1.12
+        },
+        "ICON": {
+          "n": 256,
+          "mae": 1.26
+        }
+      },
+      "n_test": 256,
+      "consensus_mae": 1.21,
+      "best_single": "GFS",
+      "best_single_mae": 1.12,
+      "raw_mae": 0.98,
+      "spread_mean": 0.84
+    },
+    "Osaka": {
+      "available": true,
+      "per_model": {
+        "ECMWF IFS": {
+          "n": 300,
+          "mae": 1.13
+        },
+        "GFS": {
+          "n": 300,
+          "mae": 1.06
+        },
+        "ICON": {
+          "n": 300,
+          "mae": 1.06
+        }
+      },
+      "n_test": 300,
+      "consensus_mae": 0.89,
+      "best_single": "ICON",
+      "best_single_mae": 1.06,
+      "raw_mae": 1.52,
+      "spread_mean": 0.79
+    }
+  },
+  "conformal": {
+    "Quzhou": {
+      "target": 0.8,
+      "split_conformal": {
+        "coverage": 0.551,
+        "width": 6.71
+      },
+      "quantile": {
+        "coverage": 0.547,
+        "width": 2.87
+      }
+    },
+    "Shanghai": {
+      "target": 0.8,
+      "split_conformal": {
+        "coverage": 0.809,
+        "width": 6.15
+      },
+      "quantile": {
+        "coverage": 0.629,
+        "width": 2.27
+      }
+    },
+    "Osaka": {
+      "target": 0.8,
+      "split_conformal": {
+        "coverage": 0.833,
+        "width": 2.44
+      },
+      "quantile": {
+        "coverage": 0.753,
+        "width": 1.87
+      }
+    }
+  },
+  "credibility": {
+    "Quzhou": {
+      "bins": {
+        "low": 2.47,
+        "mid": 1.84,
+        "high": 1.28
+      },
+      "monotonic": true,
+      "n": {
+        "low": 84,
+        "mid": 83,
+        "high": 87
+      }
+    },
+    "Shanghai": {
+      "bins": {
+        "low": 1.07,
+        "mid": 0.96,
+        "high": 0.91
+      },
+      "monotonic": true,
+      "n": {
+        "low": 85,
+        "mid": 84,
+        "high": 87
+      }
+    },
+    "Osaka": {
+      "bins": {
+        "low": 1.71,
+        "mid": 1.46,
+        "high": 1.4
+      },
+      "monotonic": true,
+      "n": {
+        "low": 99,
+        "mid": 99,
+        "high": 102
+      }
+    }
+  },
+  "smartbase": {
+    "Quzhou": {
+      "default model": {
+        "raw": 1.86,
+        "corr": 1.31,
+        "better": 0.76,
+        "n_tr": 1091,
+        "n_te": 254
+      },
+      "GFS": {
+        "raw": 1.42,
+        "corr": 1.28,
+        "better": 0.571,
+        "n_tr": 1091,
+        "n_te": 254
+      },
+      "ICON": {
+        "raw": 1.02,
+        "corr": 1.21,
+        "better": 0.374,
+        "n_tr": 1034,
+        "n_te": 254
+      },
+      "ECMWF": {
+        "raw": 1.72,
+        "corr": 1.14,
+        "better": 0.74,
+        "n_tr": 330,
+        "n_te": 254
+      },
+      "consensus": {
+        "raw": 1.17,
+        "corr": 1.04,
+        "better": 0.587,
+        "n_tr": 1091,
+        "n_te": 254
+      }
+    },
+    "Shanghai": {
+      "default model": {
+        "raw": 0.98,
+        "corr": 0.94,
+        "better": 0.586,
+        "n_tr": 1100,
+        "n_te": 256
+      },
+      "GFS": {
+        "raw": 1.12,
+        "corr": 0.97,
+        "better": 0.672,
+        "n_tr": 1100,
+        "n_te": 256
+      },
+      "ICON": {
+        "raw": 1.26,
+        "corr": 1.11,
+        "better": 0.629,
+        "n_tr": 1043,
+        "n_te": 256
+      },
+      "ECMWF": {
+        "raw": 1.66,
+        "corr": 1.05,
+        "better": 0.793,
+        "n_tr": 340,
+        "n_te": 256
+      },
+      "consensus": {
+        "raw": 1.21,
+        "corr": 0.9,
+        "better": 0.742,
+        "n_tr": 1100,
+        "n_te": 256
+      }
+    },
+    "Osaka": {
+      "default model": {
+        "raw": 1.52,
+        "corr": 0.65,
+        "better": 0.823,
+        "n_tr": 375,
+        "n_te": 300
+      },
+      "GFS": {
+        "raw": 1.06,
+        "corr": 0.95,
+        "better": 0.583,
+        "n_tr": 375,
+        "n_te": 300
+      },
+      "ICON": {
+        "raw": 1.06,
+        "corr": 1.2,
+        "better": 0.507,
+        "n_tr": 375,
+        "n_te": 300
+      },
+      "ECMWF": {
+        "raw": 1.13,
+        "corr": 0.97,
+        "better": 0.613,
+        "n_tr": 364,
+        "n_te": 300
+      },
+      "consensus": {
+        "raw": 0.89,
+        "corr": 0.86,
+        "better": 0.553,
+        "n_tr": 375,
+        "n_te": 300
+      }
+    }
+  },
+  "climprof": {
+    "Quzhou": {
+      "ann": {
+        "t_ann": 18.4,
+        "precip_ann": 1645.0,
+        "wind_ann": 8.6,
+        "pressure_ann": 1006.9,
+        "rh_ann": 74.1,
+        "dew_ann": 13.3,
+        "t_warm_month": 8,
+        "t_cold_month": 1,
+        "wet_month": 6,
+        "dry_month": 10,
+        "n_years": 20
+      },
+      "monthly": [
+        {
+          "month": 1,
+          "t_mean": 6.5,
+          "t_max": 10.8,
+          "t_min": 2.7,
+          "rh": 72.1,
+          "wind": 8.8,
+          "pressure": 1016.9,
+          "dew": 1.3,
+          "precip": 73.0
+        },
+        {
+          "month": 2,
+          "t_mean": 8.2,
+          "t_max": 12.7,
+          "t_min": 4.2,
+          "rh": 75.9,
+          "wind": 9.4,
+          "pressure": 1014.6,
+          "dew": 3.8,
+          "precip": 107.0
+        },
+        {
+          "month": 3,
+          "t_mean": 12.9,
+          "t_max": 17.7,
+          "t_min": 8.3,
+          "rh": 74.6,
+          "wind": 8.8,
+          "pressure": 1010.3,
+          "dew": 8.0,
+          "precip": 166.0
+        },
+        {
+          "month": 4,
+          "t_mean": 17.8,
+          "t_max": 22.7,
+          "t_min": 13.1,
+          "rh": 75.5,
+          "wind": 8.3,
+          "pressure": 1005.8,
+          "dew": 13.0,
+          "precip": 189.0
+        },
+        {
+          "month": 5,
+          "t_mean": 22.3,
+          "t_max": 26.8,
+          "t_min": 18.1,
+          "rh": 77.1,
+          "wind": 7.9,
+          "pressure": 1001.8,
+          "dew": 17.7,
+          "precip": 216.0
+        },
+        {
+          "month": 6,
+          "t_mean": 25.2,
+          "t_max": 29.0,
+          "t_min": 21.8,
+          "rh": 83.4,
+          "wind": 7.4,
+          "pressure": 997.5,
+          "dew": 22.0,
+          "precip": 351.0
+        },
+        {
+          "month": 7,
+          "t_mean": 29.3,
+          "t_max": 33.6,
+          "t_min": 25.5,
+          "rh": 76.2,
+          "wind": 8.0,
+          "pressure": 996.4,
+          "dew": 24.2,
+          "precip": 141.0
+        },
+        {
+          "month": 8,
+          "t_mean": 29.7,
+          "t_max": 34.4,
+          "t_min": 25.8,
+          "rh": 71.6,
+          "wind": 7.8,
+          "pressure": 997.3,
+          "dew": 23.4,
+          "precip": 115.0
+        },
+        {
+          "month": 9,
+          "t_mean": 25.9,
+          "t_max": 30.4,
+          "t_min": 22.0,
+          "rh": 72.6,
+          "wind": 9.0,
+          "pressure": 1002.8,
+          "dew": 19.9,
+          "precip": 91.0
+        },
+        {
+          "month": 10,
+          "t_mean": 20.5,
+          "t_max": 25.0,
+          "t_min": 16.4,
+          "rh": 69.0,
+          "wind": 9.9,
+          "pressure": 1009.7,
+          "dew": 14.0,
+          "precip": 55.0
+        },
+        {
+          "month": 11,
+          "t_mean": 14.4,
+          "t_max": 18.8,
+          "t_min": 10.5,
+          "rh": 72.6,
+          "wind": 8.8,
+          "pressure": 1013.2,
+          "dew": 9.0,
+          "precip": 82.0
+        },
+        {
+          "month": 12,
+          "t_mean": 8.1,
+          "t_max": 12.6,
+          "t_min": 3.9,
+          "rh": 69.4,
+          "wind": 8.6,
+          "pressure": 1016.8,
+          "dew": 2.3,
+          "precip": 58.0
+        }
+      ]
+    },
+    "Shanghai": {
+      "ann": {
+        "t_ann": 16.9,
+        "precip_ann": 1260.0,
+        "wind_ann": 14.7,
+        "pressure_ann": 1015.6,
+        "rh_ann": 77.6,
+        "dew_ann": 12.7,
+        "t_warm_month": 8,
+        "t_cold_month": 1,
+        "wet_month": 6,
+        "dry_month": 12,
+        "n_years": 20
+      },
+      "monthly": [
+        {
+          "month": 1,
+          "t_mean": 4.9,
+          "t_max": 8.3,
+          "t_min": 1.8,
+          "rh": 75.3,
+          "wind": 14.3,
+          "pressure": 1026.3,
+          "dew": 0.7,
+          "precip": 52.0
+        },
+        {
+          "month": 2,
+          "t_mean": 6.2,
+          "t_max": 9.7,
+          "t_min": 3.0,
+          "rh": 77.0,
+          "wind": 15.0,
+          "pressure": 1024.2,
+          "dew": 2.2,
+          "precip": 64.0
+        },
+        {
+          "month": 3,
+          "t_mean": 10.4,
+          "t_max": 14.5,
+          "t_min": 6.6,
+          "rh": 76.0,
+          "wind": 15.5,
+          "pressure": 1019.6,
+          "dew": 5.9,
+          "precip": 78.0
+        },
+        {
+          "month": 4,
+          "t_mean": 15.3,
+          "t_max": 19.6,
+          "t_min": 11.4,
+          "rh": 75.2,
+          "wind": 15.4,
+          "pressure": 1014.8,
+          "dew": 10.5,
+          "precip": 95.0
+        },
+        {
+          "month": 5,
+          "t_mean": 20.3,
+          "t_max": 24.4,
+          "t_min": 16.7,
+          "rh": 76.4,
+          "wind": 15.1,
+          "pressure": 1010.4,
+          "dew": 15.6,
+          "precip": 109.0
+        },
+        {
+          "month": 6,
+          "t_mean": 24.0,
+          "t_max": 27.1,
+          "t_min": 21.2,
+          "rh": 83.8,
+          "wind": 13.8,
+          "pressure": 1005.6,
+          "dew": 20.9,
+          "precip": 238.0
+        },
+        {
+          "month": 7,
+          "t_mean": 28.3,
+          "t_max": 31.5,
+          "t_min": 25.8,
+          "rh": 82.1,
+          "wind": 15.1,
+          "pressure": 1004.1,
+          "dew": 24.8,
+          "precip": 193.0
+        },
+        {
+          "month": 8,
+          "t_mean": 28.5,
+          "t_max": 31.5,
+          "t_min": 26.1,
+          "rh": 80.3,
+          "wind": 14.8,
+          "pressure": 1005.4,
+          "dew": 24.5,
+          "precip": 129.0
+        },
+        {
+          "month": 9,
+          "t_mean": 24.5,
+          "t_max": 27.2,
+          "t_min": 22.1,
+          "rh": 80.6,
+          "wind": 14.0,
+          "pressure": 1011.4,
+          "dew": 20.7,
+          "precip": 132.0
+        },
+        {
+          "month": 10,
+          "t_mean": 19.5,
+          "t_max": 22.5,
+          "t_min": 16.8,
+          "rh": 76.2,
+          "wind": 14.4,
+          "pressure": 1018.6,
+          "dew": 14.9,
+          "precip": 64.0
+        },
+        {
+          "month": 11,
+          "t_mean": 13.8,
+          "t_max": 17.1,
+          "t_min": 10.7,
+          "rh": 75.5,
+          "wind": 14.2,
+          "pressure": 1022.0,
+          "dew": 9.2,
+          "precip": 69.0
+        },
+        {
+          "month": 12,
+          "t_mean": 7.1,
+          "t_max": 10.6,
+          "t_min": 3.8,
+          "rh": 73.2,
+          "wind": 14.3,
+          "pressure": 1025.7,
+          "dew": 2.3,
+          "precip": 37.0
+        }
+      ]
+    },
+    "Osaka": {
+      "ann": {
+        "t_ann": 15.9,
+        "precip_ann": 1605.0,
+        "wind_ann": 10.0,
+        "pressure_ann": 1012.0,
+        "rh_ann": 74.6,
+        "dew_ann": 11.1,
+        "t_warm_month": 8,
+        "t_cold_month": 1,
+        "wet_month": 7,
+        "dry_month": 1,
+        "n_years": 20
+      },
+      "monthly": [
+        {
+          "month": 1,
+          "t_mean": 4.6,
+          "t_max": 8.5,
+          "t_min": 0.8,
+          "rh": 73.3,
+          "wind": 10.5,
+          "pressure": 1017.2,
+          "dew": -0.1,
+          "precip": 51.0
+        },
+        {
+          "month": 2,
+          "t_mean": 5.3,
+          "t_max": 9.6,
+          "t_min": 1.0,
+          "rh": 72.0,
+          "wind": 10.8,
+          "pressure": 1017.1,
+          "dew": 0.3,
+          "precip": 72.0
+        },
+        {
+          "month": 3,
+          "t_mean": 8.8,
+          "t_max": 13.4,
+          "t_min": 3.9,
+          "rh": 71.6,
+          "wind": 10.9,
+          "pressure": 1014.5,
+          "dew": 3.6,
+          "precip": 115.0
+        },
+        {
+          "month": 4,
+          "t_mean": 13.7,
+          "t_max": 18.3,
+          "t_min": 8.7,
+          "rh": 71.3,
+          "wind": 10.7,
+          "pressure": 1012.0,
+          "dew": 8.1,
+          "precip": 137.0
+        },
+        {
+          "month": 5,
+          "t_mean": 18.5,
+          "t_max": 23.0,
+          "t_min": 13.9,
+          "rh": 72.9,
+          "wind": 9.9,
+          "pressure": 1009.2,
+          "dew": 13.2,
+          "precip": 163.0
+        },
+        {
+          "month": 6,
+          "t_mean": 22.6,
+          "t_max": 26.5,
+          "t_min": 18.8,
+          "rh": 77.0,
+          "wind": 9.3,
+          "pressure": 1005.9,
+          "dew": 18.0,
+          "precip": 211.0
+        },
+        {
+          "month": 7,
+          "t_mean": 26.7,
+          "t_max": 30.2,
+          "t_min": 23.6,
+          "rh": 79.8,
+          "wind": 9.4,
+          "pressure": 1005.9,
+          "dew": 22.7,
+          "precip": 220.0
+        },
+        {
+          "month": 8,
+          "t_mean": 28.3,
+          "t_max": 32.2,
+          "t_min": 24.9,
+          "rh": 74.5,
+          "wind": 9.7,
+          "pressure": 1006.1,
+          "dew": 23.0,
+          "precip": 135.0
+        },
+        {
+          "month": 9,
+          "t_mean": 24.5,
+          "t_max": 28.5,
+          "t_min": 21.0,
+          "rh": 75.7,
+          "wind": 9.6,
+          "pressure": 1009.4,
+          "dew": 19.6,
+          "precip": 190.0
+        },
+        {
+          "month": 10,
+          "t_mean": 18.4,
+          "t_max": 22.5,
+          "t_min": 14.5,
+          "rh": 75.9,
+          "wind": 9.6,
+          "pressure": 1014.1,
+          "dew": 13.7,
+          "precip": 162.0
+        },
+        {
+          "month": 11,
+          "t_mean": 12.4,
+          "t_max": 16.6,
+          "t_min": 8.3,
+          "rh": 76.1,
+          "wind": 8.9,
+          "pressure": 1016.5,
+          "dew": 8.0,
+          "precip": 86.0
+        },
+        {
+          "month": 12,
+          "t_mean": 7.0,
+          "t_max": 11.0,
+          "t_min": 3.1,
+          "rh": 74.5,
+          "wind": 10.3,
+          "pressure": 1016.8,
+          "dew": 2.5,
+          "precip": 64.0
+        }
+      ]
+    }
+  },
+  "clskill": {
+    "Quzhou": {
+      "mae_clim": 3.2,
+      "mae_raw": 1.86,
+      "mae_gb": 1.31,
+      "skill_raw": 0.419,
+      "skill_gb": 0.59,
+      "n": 254
+    },
+    "Shanghai": {
+      "mae_clim": 2.66,
+      "mae_raw": 0.98,
+      "mae_gb": 0.94,
+      "skill_raw": 0.632,
+      "skill_gb": 0.648,
+      "n": 256
+    },
+    "Osaka": {
+      "mae_clim": 2.38,
+      "mae_raw": 1.52,
+      "mae_gb": 0.65,
+      "skill_raw": 0.361,
+      "skill_gb": 0.728,
+      "n": 300
+    }
+  },
+  "fair": {
+    "Quzhou": {
+      "n": 254,
+      "mae": {
+        "raw": 1.858,
+        "const_bias": 2.9,
+        "roll7": 1.22,
+        "roll30": 1.196,
+        "gbm": 1.313
+      },
+      "roll30_vs_raw": {
+        "diff": 0.662,
+        "lo": 0.393,
+        "hi": 0.924
+      },
+      "gbm_vs_raw": {
+        "diff": 0.545,
+        "lo": 0.321,
+        "hi": 0.74
+      },
+      "gbm_vs_roll30": {
+        "diff": -0.116,
+        "lo": -0.253,
+        "hi": 0.012
+      },
+      "gbm_beats_roll30_share": 0.429,
+      "hot_threshold": 36.1,
+      "n_hot": 2,
+      "heat": {
+        "raw": {
+          "alerts": 1,
+          "hits": 1,
+          "false_alarms": 0,
+          "hot_mae": 0.9
+        },
+        "roll30": {
+          "alerts": 0,
+          "hits": 0,
+          "false_alarms": 0,
+          "hot_mae": 2.35
+        },
+        "gbm": {
+          "alerts": 1,
+          "hits": 0,
+          "false_alarms": 1,
+          "hot_mae": 1.38
+        }
+      },
+      "gbm_seeds": {
+        "n_seeds": 10,
+        "min": 1.264,
+        "mean": 1.306,
+        "max": 1.39,
+        "seeds_beating_roll30": 0
+      }
+    },
+    "Shanghai": {
+      "n": 256,
+      "mae": {
+        "raw": 0.98,
+        "const_bias": 1.865,
+        "roll7": 0.886,
+        "roll30": 0.862,
+        "gbm": 0.937
+      },
+      "roll30_vs_raw": {
+        "diff": 0.118,
+        "lo": 0.005,
+        "hi": 0.223
+      },
+      "gbm_vs_raw": {
+        "diff": 0.044,
+        "lo": -0.117,
+        "hi": 0.172
+      },
+      "gbm_vs_roll30": {
+        "diff": -0.075,
+        "lo": -0.216,
+        "hi": 0.051
+      },
+      "gbm_beats_roll30_share": 0.512,
+      "hot_threshold": 34.3,
+      "n_hot": 5,
+      "heat": {
+        "raw": {
+          "alerts": 5,
+          "hits": 4,
+          "false_alarms": 1,
+          "hot_mae": 1.02
+        },
+        "roll30": {
+          "alerts": 5,
+          "hits": 4,
+          "false_alarms": 1,
+          "hot_mae": 1.24
+        },
+        "gbm": {
+          "alerts": 4,
+          "hits": 3,
+          "false_alarms": 1,
+          "hot_mae": 1.94
+        }
+      },
+      "gbm_seeds": {
+        "n_seeds": 10,
+        "min": 0.906,
+        "mean": 0.924,
+        "max": 0.951,
+        "seeds_beating_roll30": 0
+      }
+    },
+    "Osaka": {
+      "n": 300,
+      "mae": {
+        "raw": 1.525,
+        "const_bias": 0.671,
+        "roll7": 0.746,
+        "roll30": 0.684,
+        "gbm": 0.648
+      },
+      "roll30_vs_raw": {
+        "diff": 0.841,
+        "lo": 0.691,
+        "hi": 0.975
+      },
+      "gbm_vs_raw": {
+        "diff": 0.877,
+        "lo": 0.723,
+        "hi": 1.018
+      },
+      "gbm_vs_roll30": {
+        "diff": 0.035,
+        "lo": 0.002,
+        "hi": 0.074
+      },
+      "gbm_beats_roll30_share": 0.56,
+      "hot_threshold": 34.5,
+      "n_hot": 30,
+      "heat": {
+        "raw": {
+          "alerts": 9,
+          "hits": 9,
+          "false_alarms": 0,
+          "hot_mae": 2.22
+        },
+        "roll30": {
+          "alerts": 18,
+          "hits": 16,
+          "false_alarms": 2,
+          "hot_mae": 0.86
+        },
+        "gbm": {
+          "alerts": 28,
+          "hits": 25,
+          "false_alarms": 3,
+          "hot_mae": 0.7
+        }
+      },
+      "gbm_seeds": {
+        "n_seeds": 10,
+        "min": 0.643,
+        "mean": 0.657,
+        "max": 0.669,
+        "seeds_beating_roll30": 10
+      }
+    }
+  },
+  "adaptive_interval": {
+    "Quzhou": {
+      "target": 0.8,
+      "window": 90,
+      "n": 254,
+      "coverage": 0.799,
+      "width": 3.89
+    },
+    "Shanghai": {
+      "target": 0.8,
+      "window": 90,
+      "n": 256,
+      "coverage": 0.781,
+      "width": 2.51
+    },
+    "Osaka": {
+      "target": 0.8,
+      "window": 90,
+      "n": 300,
+      "coverage": 0.767,
+      "width": 2.07
+    }
+  },
+  "drift": {
+    "Quzhou": {
+      "train_mean_bias": 1.17,
+      "test_mean_bias": -1.73,
+      "yearly_station_minus_forecast": {
+        "2022": 1.2,
+        "2023": 2.01,
+        "2024": 1.78,
+        "2025": -0.77,
+        "2026": -1.53
+      },
+      "yearly_station_minus_era5": {
+        "2022": 0.06,
+        "2023": 1.43,
+        "2024": 0.94,
+        "2025": -1.88,
+        "2026": -1.4
+      },
+      "yearly_default_vs_icon": {
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.64,
+        "2026": 1.72
+      }
+    },
+    "Shanghai": {
+      "train_mean_bias": 1.22,
+      "test_mean_bias": -0.63,
+      "yearly_station_minus_forecast": {
+        "2022": 1.36,
+        "2023": 2.14,
+        "2024": 2.0,
+        "2025": -0.81,
+        "2026": -0.48
+      },
+      "yearly_station_minus_era5": {
+        "2022": 1.71,
+        "2023": 2.5,
+        "2024": 2.14,
+        "2025": -0.53,
+        "2026": -0.42
+      },
+      "yearly_default_vs_icon": {
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.19,
+        "2026": 0.99
+      }
+    },
+    "Osaka": {
+      "train_mean_bias": 1.5,
+      "test_mean_bias": 1.43,
+      "yearly_station_minus_forecast": {
+        "2023": 2.6,
+        "2024": 2.2,
+        "2025": 1.47,
+        "2026": 1.42
+      },
+      "yearly_station_minus_era5": {
+        "2023": 1.92,
+        "2024": -0.13,
+        "2025": 0.42,
+        "2026": -0.06
+      },
+      "yearly_default_vs_icon": {
+        "2023": 1.27,
+        "2024": 1.0,
+        "2025": 0.89,
+        "2026": 1.1
+      }
+    }
+  },
+  "lead_time": {
+    "Quzhou": {
+      "first_day1": "2022-09-19",
+      "day0": {
+        "n": 254,
+        "raw_mae": 1.756,
+        "roll30_mae": 1.166,
+        "roll30_vs_raw": {
+          "diff": 0.591,
+          "lo": 0.335,
+          "hi": 0.842
+        }
+      },
+      "day1": {
+        "n": 254,
+        "raw_mae": 2.06,
+        "roll30_mae": 1.481,
+        "roll30_vs_raw": {
+          "diff": 0.58,
+          "lo": 0.311,
+          "hi": 0.866
+        }
+      },
+      "day2": {
+        "n": 254,
+        "raw_mae": 2.213,
+        "roll30_mae": 1.63,
+        "roll30_vs_raw": {
+          "diff": 0.582,
+          "lo": 0.286,
+          "hi": 0.885
+        }
+      }
+    },
+    "Shanghai": {
+      "first_day1": "2022-09-19",
+      "day0": {
+        "n": 256,
+        "raw_mae": 0.927,
+        "roll30_mae": 0.852,
+        "roll30_vs_raw": {
+          "diff": 0.075,
+          "lo": -0.03,
+          "hi": 0.172
+        }
+      },
+      "day1": {
+        "n": 256,
+        "raw_mae": 1.132,
+        "roll30_mae": 1.03,
+        "roll30_vs_raw": {
+          "diff": 0.101,
+          "lo": 0.018,
+          "hi": 0.193
+        }
+      },
+      "day2": {
+        "n": 256,
+        "raw_mae": 1.227,
+        "roll30_mae": 1.167,
+        "roll30_vs_raw": {
+          "diff": 0.06,
+          "lo": -0.037,
+          "hi": 0.166
+        }
+      }
+    },
+    "Osaka": {
+      "first_day1": "2022-11-03",
+      "day0": {
+        "n": 300,
+        "raw_mae": 1.545,
+        "roll30_mae": 0.687,
+        "roll30_vs_raw": {
+          "diff": 0.858,
+          "lo": 0.709,
+          "hi": 0.992
+        }
+      },
+      "day1": {
+        "n": 300,
+        "raw_mae": 1.738,
+        "roll30_mae": 1.299,
+        "roll30_vs_raw": {
+          "diff": 0.44,
+          "lo": 0.273,
+          "hi": 0.613
+        }
+      },
+      "day2": {
+        "n": 300,
+        "raw_mae": 1.725,
+        "roll30_mae": 1.328,
+        "roll30_vs_raw": {
+          "diff": 0.397,
+          "lo": 0.246,
+          "hi": 0.548
+        }
+      }
+    }
+  },
+  "crossexam": {
+    "Quzhou": {
+      "n_days": 1604,
+      "span": [
+        "2022-01-01",
+        "2026-09-22"
+      ],
+      "events": [
+        {
+          "date": "2022-08-08",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": -1.2,
+              "t": -1.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.79,
+              "t": -2.8,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.6,
+              "t": -1.6,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2023-03-26",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": 0.31,
+              "t": 0.5,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 2.11,
+              "t": 3.1,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 1.8,
+              "t": 3.9,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2023-12-16",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": -0.3,
+              "t": -0.5,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.86,
+              "t": -1.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.56,
+              "t": -1.3,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-08-03",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.11,
+              "t": -0.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.35,
+              "t": -2.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -1.23,
+              "t": -2.7,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-12-22",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -2.13,
+              "t": -4.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.97,
+              "t": -3.7,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.16,
+              "t": 0.3,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-06-07",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": -0.18,
+              "t": -0.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.58,
+              "t": -1.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.39,
+              "t": -0.8,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-09-29",
+          "verdict": "forecast changed",
+          "steps": {
+            "S-F": {
+              "jump": -2.48,
+              "t": -6.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.5,
+              "t": -1.1,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 1.98,
+              "t": 6.3,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2026-02-17",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": 0.97,
+              "t": 2.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 1.18,
+              "t": 2.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.21,
+              "t": 1.3,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        }
+      ],
+      "answer_key": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2024-12-22",
+          "off_days": 10,
+          "verdict": "station changed",
+          "correct": true
+        }
+      ],
+      "injection": {
+        "window": [
+          "2022-01-01",
+          "2024-11-30"
+        ],
+        "n_days": 1020,
+        "injected_at": "2023-06-01",
+        "control_events": 4,
+        "control_list": [
+          [
+            "2022-08-30",
+            "ambiguous"
+          ],
+          [
+            "2023-03-26",
+            "reanalysis changed"
+          ],
+          [
+            "2023-09-30",
+            "ambiguous"
+          ],
+          [
+            "2024-08-03",
+            "ambiguous"
+          ]
+        ],
+        "rows": [
+          {
+            "target": "station",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "station",
+            "size": 1.0,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "station",
+            "size": 2.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-06-02",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "station",
+            "size": 3.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-06-02",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "forecast",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "forecast",
+            "size": 1.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-05-25",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "forecast",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-28",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "forecast",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-31",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "reanalysis",
+            "size": 1.0,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "reanalysis",
+            "size": 2.0,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "reanalysis",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-06-01",
+            "verdict": "reanalysis changed"
+          }
+        ]
+      }
+    },
+    "Shanghai": {
+      "n_days": 1614,
+      "span": [
+        "2022-01-02",
+        "2026-09-22"
+      ],
+      "events": [
+        {
+          "date": "2022-04-03",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": -0.31,
+              "t": -0.4,
+              "n_before": 92,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 0.24,
+              "t": 0.3,
+              "n_before": 92,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.54,
+              "t": 1.4,
+              "n_before": 92,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2022-08-19",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": -0.06,
+              "t": -0.1,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.79,
+              "t": -1.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.73,
+              "t": -2.2,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2023-06-24",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": -0.55,
+              "t": -0.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.03,
+              "t": -0.0,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.53,
+              "t": 1.8,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-01-14",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": 0.46,
+              "t": 0.7,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.13,
+              "t": -0.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.59,
+              "t": -2.1,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-02-09",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -1.67,
+              "t": -3.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.73,
+              "t": -3.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.06,
+              "t": -0.2,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-05-22",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": -0.77,
+              "t": -1.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 0.18,
+              "t": 0.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.94,
+              "t": 2.6,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-09-19",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": 0.02,
+              "t": 0.0,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.51,
+              "t": -1.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.53,
+              "t": -1.5,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        }
+      ],
+      "answer_key": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2025-02-09",
+          "off_days": 39,
+          "verdict": "station changed",
+          "correct": true
+        }
+      ],
+      "injection": {
+        "window": [
+          "2022-01-02",
+          "2024-11-30"
+        ],
+        "n_days": 1018,
+        "injected_at": "2023-06-01",
+        "control_events": 1,
+        "control_list": [
+          [
+            "2022-08-19",
+            "ambiguous"
+          ]
+        ],
+        "rows": [
+          {
+            "target": "station",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "station",
+            "size": 1.0,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "station",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-29",
+            "verdict": "station changed"
+          },
+          {
+            "target": "station",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-29",
+            "verdict": "station changed"
+          },
+          {
+            "target": "forecast",
+            "size": 0.5,
+            "detected": true,
+            "correct": false,
+            "found": "2023-06-30",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "forecast",
+            "size": 1.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-06-24",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "forecast",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-06-07",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "forecast",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-06-07",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "reanalysis",
+            "size": 1.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-05-01",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "reanalysis",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-06-03",
+            "verdict": "reanalysis changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-31",
+            "verdict": "reanalysis changed"
+          }
+        ]
+      }
+    },
+    "Osaka": {
+      "n_days": 726,
+      "span": [
+        "2022-02-06",
+        "2026-09-22"
+      ],
+      "events": [
+        {
+          "date": "2023-11-01",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -1.0,
+              "t": -3.1,
+              "n_before": 104,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.39,
+              "t": -3.5,
+              "n_before": 104,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.39,
+              "t": -1.0,
+              "n_before": 104,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-09-28",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.99,
+              "t": -3.1,
+              "n_before": 107,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.32,
+              "t": -3.3,
+              "n_before": 107,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.32,
+              "t": -0.8,
+              "n_before": 107,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-06-11",
+          "verdict": "no step here",
+          "steps": {
+            "S-F": {
+              "jump": 0.36,
+              "t": 1.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.16,
+              "t": -0.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.52,
+              "t": -1.4,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-09-25",
+          "verdict": "forecast changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.68,
+              "t": -2.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 0.19,
+              "t": 0.6,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.87,
+              "t": 2.5,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2026-02-12",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": 0.35,
+              "t": 1.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -0.31,
+              "t": -1.0,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.66,
+              "t": -2.1,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2026-05-10",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": 0.22,
+              "t": 0.8,
+              "n_before": 150,
+              "n_after": 135
+            },
+            "S-E": {
+              "jump": -1.14,
+              "t": -3.5,
+              "n_before": 150,
+              "n_after": 135
+            },
+            "F-E": {
+              "jump": -1.37,
+              "t": -4.3,
+              "n_before": 150,
+              "n_after": 135
+            }
+          }
+        }
+      ],
+      "answer_key": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": null,
+          "off_days": null,
+          "verdict": null,
+          "correct": false
+        }
+      ],
+      "injection": null
+    },
+    "Hotan": {
+      "n_days": 1627,
+      "span": [
+        "2022-01-01",
+        "2026-09-22"
+      ],
+      "events": [
+        {
+          "date": "2022-05-13",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -1.32,
+              "t": -2.8,
+              "n_before": 133,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.1,
+              "t": -2.1,
+              "n_before": 133,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.22,
+              "t": 0.6,
+              "n_before": 133,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2022-09-30",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": 1.24,
+              "t": 2.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 1.83,
+              "t": 3.0,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 0.59,
+              "t": 1.7,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2023-04-24",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": 0.09,
+              "t": 0.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.25,
+              "t": -2.1,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -1.34,
+              "t": -4.6,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2023-10-16",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.03,
+              "t": -0.0,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 1.4,
+              "t": 2.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 1.43,
+              "t": 4.5,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-02-01",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.5,
+              "t": -0.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.87,
+              "t": -3.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -1.36,
+              "t": -4.4,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-03-21",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": 0.16,
+              "t": 0.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.72,
+              "t": -2.8,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -1.88,
+              "t": -6.4,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2024-09-02",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.42,
+              "t": -0.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 1.09,
+              "t": 2.3,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 1.51,
+              "t": 5.2,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-01-22",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -1.7,
+              "t": -4.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -2.34,
+              "t": -4.9,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -0.64,
+              "t": -1.7,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-05-06",
+          "verdict": "reanalysis changed",
+          "steps": {
+            "S-F": {
+              "jump": -0.52,
+              "t": -1.4,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": -1.88,
+              "t": -4.2,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": -1.36,
+              "t": -4.1,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2025-09-25",
+          "verdict": "ambiguous",
+          "steps": {
+            "S-F": {
+              "jump": 0.75,
+              "t": 2.1,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "S-E": {
+              "jump": 2.09,
+              "t": 5.5,
+              "n_before": 150,
+              "n_after": 150
+            },
+            "F-E": {
+              "jump": 1.34,
+              "t": 5.8,
+              "n_before": 150,
+              "n_after": 150
+            }
+          }
+        },
+        {
+          "date": "2026-03-11",
+          "verdict": "station changed",
+          "steps": {
+            "S-F": {
+              "jump": -1.43,
+              "t": -4.3,
+              "n_before": 150,
+              "n_after": 147
+            },
+            "S-E": {
+              "jump": -1.41,
+              "t": -4.3,
+              "n_before": 150,
+              "n_after": 147
+            },
+            "F-E": {
+              "jump": 0.02,
+              "t": 0.6,
+              "n_before": 150,
+              "n_after": 147
+            }
+          }
+        }
+      ],
+      "answer_key": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2025-01-22",
+          "off_days": 21,
+          "verdict": "station changed",
+          "correct": true
+        }
+      ],
+      "injection": {
+        "window": [
+          "2022-01-01",
+          "2024-11-30"
+        ],
+        "n_days": 1021,
+        "injected_at": "2023-05-31",
+        "control_events": 7,
+        "control_list": [
+          [
+            "2022-05-13",
+            "station changed"
+          ],
+          [
+            "2022-09-30",
+            "station changed"
+          ],
+          [
+            "2023-04-24",
+            "reanalysis changed"
+          ],
+          [
+            "2023-10-28",
+            "reanalysis changed"
+          ],
+          [
+            "2024-02-01",
+            "reanalysis changed"
+          ],
+          [
+            "2024-03-21",
+            "reanalysis changed"
+          ],
+          [
+            "2024-08-22",
+            "ambiguous"
+          ]
+        ],
+        "rows": [
+          {
+            "target": "station",
+            "size": 0.5,
+            "detected": true,
+            "correct": false,
+            "found": "2023-04-24",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "station",
+            "size": 1.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-05-18",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "station",
+            "size": 2.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-05-18",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "station",
+            "size": 3.0,
+            "detected": true,
+            "correct": false,
+            "found": "2023-05-30",
+            "verdict": "ambiguous"
+          },
+          {
+            "target": "forecast",
+            "size": 0.5,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "forecast",
+            "size": 1.0,
+            "detected": false,
+            "correct": false,
+            "found": null,
+            "verdict": null
+          },
+          {
+            "target": "forecast",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-07-11",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "forecast",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-30",
+            "verdict": "forecast changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 0.5,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-05",
+            "verdict": "reanalysis changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 1.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-30",
+            "verdict": "reanalysis changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 2.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-30",
+            "verdict": "reanalysis changed"
+          },
+          {
+            "target": "reanalysis",
+            "size": 3.0,
+            "detected": true,
+            "correct": true,
+            "found": "2023-05-30",
+            "verdict": "reanalysis changed"
+          }
+        ]
+      }
+    }
+  },
+  "drift_monthly": {
+    "Quzhou": {
+      "2022-09": {
+        "station_minus_forecast": 1.13,
+        "station_minus_era5": -0.46,
+        "default_vs_icon": null,
+        "n": 12.0
+      },
+      "2022-10": {
+        "station_minus_forecast": 0.55,
+        "station_minus_era5": -0.49,
+        "default_vs_icon": null,
+        "n": 30.0
+      },
+      "2022-11": {
+        "station_minus_forecast": 1.94,
+        "station_minus_era5": 0.75,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2022-12": {
+        "station_minus_forecast": 1.18,
+        "station_minus_era5": 0.17,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-01": {
+        "station_minus_forecast": 1.56,
+        "station_minus_era5": -0.19,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-02": {
+        "station_minus_forecast": 1.92,
+        "station_minus_era5": 0.16,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2023-03": {
+        "station_minus_forecast": 2.08,
+        "station_minus_era5": -0.03,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-04": {
+        "station_minus_forecast": 2.59,
+        "station_minus_era5": 2.42,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-05": {
+        "station_minus_forecast": 2.09,
+        "station_minus_era5": 2.14,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-06": {
+        "station_minus_forecast": 1.78,
+        "station_minus_era5": 1.94,
+        "default_vs_icon": 0.0,
+        "n": 23.0
+      },
+      "2023-07": {
+        "station_minus_forecast": 1.68,
+        "station_minus_era5": 2.32,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-08": {
+        "station_minus_forecast": 1.86,
+        "station_minus_era5": 2.28,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-09": {
+        "station_minus_forecast": 1.79,
+        "station_minus_era5": 1.98,
+        "default_vs_icon": 0.0,
+        "n": 23.0
+      },
+      "2023-10": {
+        "station_minus_forecast": 2.21,
+        "station_minus_era5": 1.29,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-11": {
+        "station_minus_forecast": 2.4,
+        "station_minus_era5": 1.95,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-12": {
+        "station_minus_forecast": 2.13,
+        "station_minus_era5": 1.15,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-01": {
+        "station_minus_forecast": 1.99,
+        "station_minus_era5": 0.68,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-02": {
+        "station_minus_forecast": 2.37,
+        "station_minus_era5": 1.46,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2024-03": {
+        "station_minus_forecast": 1.39,
+        "station_minus_era5": 0.47,
+        "default_vs_icon": 0.0,
+        "n": 23.0
+      },
+      "2024-04": {
+        "station_minus_forecast": 1.71,
+        "station_minus_era5": 1.07,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2024-05": {
+        "station_minus_forecast": 2.11,
+        "station_minus_era5": 2.2,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-06": {
+        "station_minus_forecast": 2.32,
+        "station_minus_era5": 1.9,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-07": {
+        "station_minus_forecast": 0.76,
+        "station_minus_era5": 1.78,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-08": {
+        "station_minus_forecast": 1.65,
+        "station_minus_era5": 0.41,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-09": {
+        "station_minus_forecast": 2.05,
+        "station_minus_era5": 0.26,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-10": {
+        "station_minus_forecast": 2.32,
+        "station_minus_era5": 0.39,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-11": {
+        "station_minus_forecast": 0.99,
+        "station_minus_era5": 0.42,
+        "default_vs_icon": 0.0,
+        "n": 20.0
+      },
+      "2024-12": {
+        "station_minus_forecast": 1.37,
+        "station_minus_era5": 0.04,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-01": {
+        "station_minus_forecast": -1.01,
+        "station_minus_era5": -2.12,
+        "default_vs_icon": 0.23,
+        "n": 30.0
+      },
+      "2025-02": {
+        "station_minus_forecast": -0.43,
+        "station_minus_era5": -2.29,
+        "default_vs_icon": 0.0,
+        "n": 25.0
+      },
+      "2025-03": {
+        "station_minus_forecast": -0.16,
+        "station_minus_era5": -1.46,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2025-04": {
+        "station_minus_forecast": -0.29,
+        "station_minus_era5": -0.84,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-05": {
+        "station_minus_forecast": -0.24,
+        "station_minus_era5": -1.1,
+        "default_vs_icon": 0.0,
+        "n": 26.0
+      },
+      "2025-06": {
+        "station_minus_forecast": 0.51,
+        "station_minus_era5": -1.1,
+        "default_vs_icon": 0.0,
+        "n": 27.0
+      },
+      "2025-07": {
+        "station_minus_forecast": 0.39,
+        "station_minus_era5": -1.2,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2025-08": {
+        "station_minus_forecast": -0.0,
+        "station_minus_era5": -3.1,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2025-09": {
+        "station_minus_forecast": 0.06,
+        "station_minus_era5": -2.06,
+        "default_vs_icon": 0.12,
+        "n": 28.0
+      },
+      "2025-10": {
+        "station_minus_forecast": -2.43,
+        "station_minus_era5": -2.23,
+        "default_vs_icon": 2.68,
+        "n": 31.0
+      },
+      "2025-11": {
+        "station_minus_forecast": -2.25,
+        "station_minus_era5": -2.16,
+        "default_vs_icon": 2.0,
+        "n": 29.0
+      },
+      "2025-12": {
+        "station_minus_forecast": -2.94,
+        "station_minus_era5": -2.87,
+        "default_vs_icon": 2.28,
+        "n": 29.0
+      },
+      "2026-01": {
+        "station_minus_forecast": -2.19,
+        "station_minus_era5": -2.09,
+        "default_vs_icon": 2.2,
+        "n": 29.0
+      },
+      "2026-02": {
+        "station_minus_forecast": -1.83,
+        "station_minus_era5": -1.68,
+        "default_vs_icon": 2.61,
+        "n": 25.0
+      },
+      "2026-03": {
+        "station_minus_forecast": -1.34,
+        "station_minus_era5": -1.26,
+        "default_vs_icon": 2.25,
+        "n": 25.0
+      },
+      "2026-04": {
+        "station_minus_forecast": -1.2,
+        "station_minus_era5": -1.01,
+        "default_vs_icon": 1.72,
+        "n": 29.0
+      },
+      "2026-05": {
+        "station_minus_forecast": -1.23,
+        "station_minus_era5": -1.09,
+        "default_vs_icon": 1.47,
+        "n": 31.0
+      },
+      "2026-06": {
+        "station_minus_forecast": -1.54,
+        "station_minus_era5": -1.42,
+        "default_vs_icon": 1.24,
+        "n": 29.0
+      },
+      "2026-07": {
+        "station_minus_forecast": -0.73,
+        "station_minus_era5": -0.62,
+        "default_vs_icon": 0.72,
+        "n": 19.0
+      },
+      "2026-08": {
+        "station_minus_forecast": -1.21,
+        "station_minus_era5": -1.14,
+        "default_vs_icon": 1.06,
+        "n": 10.0
+      },
+      "2026-09": {
+        "station_minus_forecast": -2.34,
+        "station_minus_era5": -2.24,
+        "default_vs_icon": 1.61,
+        "n": 18.0
+      }
+    },
+    "Shanghai": {
+      "2022-09": {
+        "station_minus_forecast": 1.7,
+        "station_minus_era5": 2.17,
+        "default_vs_icon": null,
+        "n": 12.0
+      },
+      "2022-10": {
+        "station_minus_forecast": 1.09,
+        "station_minus_era5": 1.46,
+        "default_vs_icon": null,
+        "n": 30.0
+      },
+      "2022-11": {
+        "station_minus_forecast": 1.69,
+        "station_minus_era5": 1.94,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2022-12": {
+        "station_minus_forecast": 1.18,
+        "station_minus_era5": 1.56,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-01": {
+        "station_minus_forecast": 1.97,
+        "station_minus_era5": 2.71,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-02": {
+        "station_minus_forecast": 2.2,
+        "station_minus_era5": 2.13,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2023-03": {
+        "station_minus_forecast": 2.57,
+        "station_minus_era5": 3.01,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-04": {
+        "station_minus_forecast": 2.71,
+        "station_minus_era5": 2.77,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-05": {
+        "station_minus_forecast": 2.41,
+        "station_minus_era5": 2.15,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-06": {
+        "station_minus_forecast": 2.87,
+        "station_minus_era5": 2.87,
+        "default_vs_icon": 0.0,
+        "n": 23.0
+      },
+      "2023-07": {
+        "station_minus_forecast": 2.0,
+        "station_minus_era5": 2.74,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-08": {
+        "station_minus_forecast": 1.87,
+        "station_minus_era5": 2.42,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-09": {
+        "station_minus_forecast": 1.6,
+        "station_minus_era5": 1.84,
+        "default_vs_icon": 0.0,
+        "n": 23.0
+      },
+      "2023-10": {
+        "station_minus_forecast": 1.59,
+        "station_minus_era5": 1.96,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2023-11": {
+        "station_minus_forecast": 2.33,
+        "station_minus_era5": 3.16,
+        "default_vs_icon": 0.0,
+        "n": 29.0
+      },
+      "2023-12": {
+        "station_minus_forecast": 1.64,
+        "station_minus_era5": 2.18,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-01": {
+        "station_minus_forecast": 2.02,
+        "station_minus_era5": 2.42,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-02": {
+        "station_minus_forecast": 1.57,
+        "station_minus_era5": 1.64,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2024-03": {
+        "station_minus_forecast": 2.29,
+        "station_minus_era5": 2.09,
+        "default_vs_icon": 0.0,
+        "n": 24.0
+      },
+      "2024-04": {
+        "station_minus_forecast": 3.1,
+        "station_minus_era5": 2.96,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2024-05": {
+        "station_minus_forecast": 2.68,
+        "station_minus_era5": 2.84,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-06": {
+        "station_minus_forecast": 2.32,
+        "station_minus_era5": 2.16,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-07": {
+        "station_minus_forecast": 1.41,
+        "station_minus_era5": 2.54,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-08": {
+        "station_minus_forecast": 1.64,
+        "station_minus_era5": 1.33,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-09": {
+        "station_minus_forecast": 1.93,
+        "station_minus_era5": 1.73,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2024-10": {
+        "station_minus_forecast": 1.53,
+        "station_minus_era5": 1.66,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2024-11": {
+        "station_minus_forecast": 1.44,
+        "station_minus_era5": 1.85,
+        "default_vs_icon": 0.0,
+        "n": 20.0
+      },
+      "2024-12": {
+        "station_minus_forecast": 2.02,
+        "station_minus_era5": 2.35,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-01": {
+        "station_minus_forecast": -0.71,
+        "station_minus_era5": -0.39,
+        "default_vs_icon": 0.23,
+        "n": 31.0
+      },
+      "2025-02": {
+        "station_minus_forecast": -0.21,
+        "station_minus_era5": -0.27,
+        "default_vs_icon": 0.0,
+        "n": 26.0
+      },
+      "2025-03": {
+        "station_minus_forecast": -0.44,
+        "station_minus_era5": -0.75,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-04": {
+        "station_minus_forecast": -0.33,
+        "station_minus_era5": -0.97,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-05": {
+        "station_minus_forecast": -0.43,
+        "station_minus_era5": -0.47,
+        "default_vs_icon": 0.0,
+        "n": 30.0
+      },
+      "2025-06": {
+        "station_minus_forecast": -1.15,
+        "station_minus_era5": 0.48,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2025-07": {
+        "station_minus_forecast": -0.82,
+        "station_minus_era5": -0.54,
+        "default_vs_icon": 0.0,
+        "n": 31.0
+      },
+      "2025-08": {
+        "station_minus_forecast": -1.48,
+        "station_minus_era5": -0.46,
+        "default_vs_icon": 0.0,
+        "n": 28.0
+      },
+      "2025-09": {
+        "station_minus_forecast": -1.2,
+        "station_minus_era5": -0.09,
+        "default_vs_icon": 0.05,
+        "n": 27.0
+      },
+      "2025-10": {
+        "station_minus_forecast": -0.64,
+        "station_minus_era5": -0.57,
+        "default_vs_icon": 0.75,
+        "n": 30.0
+      },
+      "2025-11": {
+        "station_minus_forecast": -1.01,
+        "station_minus_era5": -0.94,
+        "default_vs_icon": 0.59,
+        "n": 29.0
+      },
+      "2025-12": {
+        "station_minus_forecast": -1.34,
+        "station_minus_era5": -1.26,
+        "default_vs_icon": 0.65,
+        "n": 29.0
+      },
+      "2026-01": {
+        "station_minus_forecast": -0.91,
+        "station_minus_era5": -0.81,
+        "default_vs_icon": 0.75,
+        "n": 29.0
+      },
+      "2026-02": {
+        "station_minus_forecast": -0.42,
+        "station_minus_era5": -0.33,
+        "default_vs_icon": 1.04,
+        "n": 26.0
+      },
+      "2026-03": {
+        "station_minus_forecast": -0.83,
+        "station_minus_era5": -0.78,
+        "default_vs_icon": 0.85,
+        "n": 24.0
+      },
+      "2026-04": {
+        "station_minus_forecast": -0.39,
+        "station_minus_era5": -0.33,
+        "default_vs_icon": 1.28,
+        "n": 29.0
+      },
+      "2026-05": {
+        "station_minus_forecast": -0.13,
+        "station_minus_era5": -0.03,
+        "default_vs_icon": 1.6,
+        "n": 30.0
+      },
+      "2026-06": {
+        "station_minus_forecast": -0.44,
+        "station_minus_era5": -0.39,
+        "default_vs_icon": 0.8,
+        "n": 30.0
+      },
+      "2026-07": {
+        "station_minus_forecast": -0.13,
+        "station_minus_era5": -0.05,
+        "default_vs_icon": 0.96,
+        "n": 19.0
+      },
+      "2026-08": {
+        "station_minus_forecast": -0.01,
+        "station_minus_era5": -0.02,
+        "default_vs_icon": 0.45,
+        "n": 11.0
+      },
+      "2026-09": {
+        "station_minus_forecast": -0.92,
+        "station_minus_era5": -0.85,
+        "default_vs_icon": 0.75,
+        "n": 19.0
+      }
+    },
+    "Osaka": {
+      "2023-03": {
+        "station_minus_forecast": 2.9,
+        "station_minus_era5": 2.9,
+        "default_vs_icon": 1.7,
+        "n": 1.0
+      },
+      "2023-06": {
+        "station_minus_forecast": 1.5,
+        "station_minus_era5": 1.4,
+        "default_vs_icon": 0.83,
+        "n": 3.0
+      },
+      "2023-07": {
+        "station_minus_forecast": 3.7,
+        "station_minus_era5": 1.8,
+        "default_vs_icon": 0.9,
+        "n": 1.0
+      },
+      "2023-08": {
+        "station_minus_forecast": 3.8,
+        "station_minus_era5": 2.3,
+        "default_vs_icon": 2.8,
+        "n": 1.0
+      },
+      "2023-09": {
+        "station_minus_forecast": 3.7,
+        "station_minus_era5": 2.6,
+        "default_vs_icon": 1.8,
+        "n": 1.0
+      },
+      "2023-11": {
+        "station_minus_forecast": 2.2,
+        "station_minus_era5": 1.6,
+        "default_vs_icon": 0.5,
+        "n": 1.0
+      },
+      "2024-01": {
+        "station_minus_forecast": 2.2,
+        "station_minus_era5": 0.1,
+        "default_vs_icon": 1.4,
+        "n": 1.0
+      },
+      "2024-02": {
+        "station_minus_forecast": 2.1,
+        "station_minus_era5": 0.7,
+        "default_vs_icon": 0.6,
+        "n": 1.0
+      },
+      "2024-09": {
+        "station_minus_forecast": 2.3,
+        "station_minus_era5": -1.2,
+        "default_vs_icon": 1.0,
+        "n": 1.0
+      },
+      "2025-01": {
+        "station_minus_forecast": 1.44,
+        "station_minus_era5": 0.55,
+        "default_vs_icon": 0.93,
+        "n": 31.0
+      },
+      "2025-02": {
+        "station_minus_forecast": 1.06,
+        "station_minus_era5": 0.26,
+        "default_vs_icon": 1.06,
+        "n": 27.0
+      },
+      "2025-03": {
+        "station_minus_forecast": 1.4,
+        "station_minus_era5": 0.46,
+        "default_vs_icon": 1.14,
+        "n": 31.0
+      },
+      "2025-04": {
+        "station_minus_forecast": 1.72,
+        "station_minus_era5": 0.53,
+        "default_vs_icon": 1.41,
+        "n": 30.0
+      },
+      "2025-05": {
+        "station_minus_forecast": 1.25,
+        "station_minus_era5": 0.67,
+        "default_vs_icon": 0.97,
+        "n": 31.0
+      },
+      "2025-06": {
+        "station_minus_forecast": 1.61,
+        "station_minus_era5": 0.44,
+        "default_vs_icon": 0.87,
+        "n": 30.0
+      },
+      "2025-07": {
+        "station_minus_forecast": 1.75,
+        "station_minus_era5": -0.48,
+        "default_vs_icon": 0.87,
+        "n": 31.0
+      },
+      "2025-08": {
+        "station_minus_forecast": 2.37,
+        "station_minus_era5": 0.19,
+        "default_vs_icon": 0.67,
+        "n": 29.0
+      },
+      "2025-09": {
+        "station_minus_forecast": 1.92,
+        "station_minus_era5": 0.55,
+        "default_vs_icon": 0.71,
+        "n": 28.0
+      },
+      "2025-10": {
+        "station_minus_forecast": 1.15,
+        "station_minus_era5": 0.51,
+        "default_vs_icon": 0.81,
+        "n": 31.0
+      },
+      "2025-11": {
+        "station_minus_forecast": 0.93,
+        "station_minus_era5": 0.75,
+        "default_vs_icon": 0.59,
+        "n": 30.0
+      },
+      "2025-12": {
+        "station_minus_forecast": 1.14,
+        "station_minus_era5": 0.63,
+        "default_vs_icon": 0.65,
+        "n": 31.0
+      },
+      "2026-01": {
+        "station_minus_forecast": 1.18,
+        "station_minus_era5": 0.36,
+        "default_vs_icon": 0.69,
+        "n": 31.0
+      },
+      "2026-02": {
+        "station_minus_forecast": 1.23,
+        "station_minus_era5": 0.2,
+        "default_vs_icon": 0.55,
+        "n": 28.0
+      },
+      "2026-03": {
+        "station_minus_forecast": 1.68,
+        "station_minus_era5": 0.58,
+        "default_vs_icon": 0.88,
+        "n": 26.0
+      },
+      "2026-04": {
+        "station_minus_forecast": 1.54,
+        "station_minus_era5": 0.72,
+        "default_vs_icon": 1.02,
+        "n": 29.0
+      },
+      "2026-05": {
+        "station_minus_forecast": 1.64,
+        "station_minus_era5": -0.24,
+        "default_vs_icon": 1.0,
+        "n": 31.0
+      },
+      "2026-06": {
+        "station_minus_forecast": 1.16,
+        "station_minus_era5": -0.17,
+        "default_vs_icon": 0.95,
+        "n": 30.0
+      },
+      "2026-07": {
+        "station_minus_forecast": 1.8,
+        "station_minus_era5": -0.39,
+        "default_vs_icon": 1.48,
+        "n": 31.0
+      },
+      "2026-08": {
+        "station_minus_forecast": 1.95,
+        "station_minus_era5": -1.05,
+        "default_vs_icon": 2.26,
+        "n": 31.0
+      },
+      "2026-09": {
+        "station_minus_forecast": 0.98,
+        "station_minus_era5": -1.12,
+        "default_vs_icon": 1.43,
+        "n": 30.0
+      },
+      "2026-10": {
+        "station_minus_forecast": 1.17,
+        "station_minus_era5": 0.46,
+        "default_vs_icon": 0.75,
+        "n": 31.0
+      },
+      "2026-11": {
+        "station_minus_forecast": 0.9,
+        "station_minus_era5": 0.77,
+        "default_vs_icon": 0.48,
+        "n": 6.0
+      }
+    }
+  }
+}
