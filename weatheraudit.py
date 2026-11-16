@@ -2,9 +2,9 @@
 """
 WeatherAudit
 Grade archived weather-model forecasts against real weather-station thermometers
-(NOAA GHCN-Daily) in three cities, then ask how much of the error can be removed.
+(NOAA GHCN-Daily) at eight stations, then ask how much of the error can be removed.
 
-  * strict time split: the last 305 calendar days are the test window;
+  * strict time split: the last 306 calendar dates (end minus 305 days, inclusive) are the test window;
     every feature only uses station readings that are at least 8 days old,
   * fair baselines: fixed offset, monthly offset, rolling 7/30-day bias, gradient boosting,
     compared with a paired moving-block bootstrap (95% intervals),
@@ -69,12 +69,24 @@ STATIONS = {
     "Quzhou": ("CHM00058633", 28.97, 118.87),
     "Shanghai": ("CHM00058362", 31.40, 121.47),
     "Osaka": ("JAM00047772", 34.68, 135.52),
+    # Second wave (2026-11-16): one desert site and four Korean synoptic stations,
+    # to show the audit does not depend on the first three cities.
+    "Hotan": ("CHM00051828", 37.13, 79.93),
+    "Chuncheon": ("KSM00047101", 37.90, 127.73),
+    "Gangneung": ("KSM00047105", 37.77, 128.87),
+    "Pohang": ("KSM00047138", 36.03, 129.38),
+    "Busan": ("KSM00047159", 35.10, 129.03),
 }
 PRIMARY = "Quzhou"
 # Freeze the last day of each audit so that a re-run reproduces the write-up numbers.
 # (Stations keep reporting; set PIN_END = {} to audit up to the newest reading instead.)
-PIN_END = {"Quzhou": "2026-09-22", "Shanghai": "2026-09-22", "Osaka": "2026-11-06"}
-TEST_DAYS = 305          # the last 305 calendar days are the test window, never used for training
+PIN_END = {
+    "Quzhou": "2026-09-22", "Shanghai": "2026-09-22", "Osaka": "2026-11-06",
+    "Hotan": "2026-09-22",
+    "Chuncheon": "2026-11-06", "Gangneung": "2026-11-06",
+    "Pohang": "2026-11-06", "Busan": "2026-11-06",
+}
+TEST_DAYS = 305          # the last 306 calendar dates (end minus 305 days, inclusive) are the test window, never used for training
 N_EST = 400              # max boosting iterations (early stopping usually ends sooner)
 C_UMB = 1                # cost of carrying an umbrella for nothing
 C_RAIN = 6               # cost of getting soaked (6x the umbrella cost)
@@ -239,7 +251,7 @@ def build_frames(name, sid, lat, lon, end):
     df["bias_7"] = err.shift(8).rolling(7, min_periods=3).mean()
     df["bias_30"] = err.shift(8).rolling(30, min_periods=5).mean()
     df["lag1_err"] = err.shift(8)
-    rain_true = (df.s_prcp >= RAIN_MM).astype(float)
+    rain_true = (df.s_prcp >= RAIN_MM).astype(float).where(df.s_prcp.notna())
     df["wet_hist_30"] = rain_true.shift(8).rolling(30, min_periods=5).mean()
     df["fc_wet_hist_30"] = df.fc_wet.shift(8).rolling(30, min_periods=5).mean()
     df = df.reset_index()
@@ -366,7 +378,7 @@ def audit_city(name, sid, lat, lon, end=None):
         cost_raw=round(cost_raw, 0), cost_gb=round(cost_gb, 0), cost_gb_cal=round(cost_gb_cal, 0),
         rain_rate=round(float(y.mean()), 3),
     )
-    ctx = dict(temp=te, rain=re_, tr=tr, model=m, cmodel=cm, HOT_TH=HOT_TH,
+    ctx = dict(name=name, temp=te, rain=re_, tr=tr, model=m, cmodel=cm, HOT_TH=HOT_TH,
                gb_pred=gb_pred, p_gb=p_gb, p_raw=p_raw, th_gb=th_gb, th_raw=th_raw,
                cost_raw=cost_raw, cost_gb=cost_gb, cost_gb_cal=cost_gb_cal,
                ft=ft, fr=fr, ts=ts, lat=lat, lon=lon, meta=meta)
@@ -693,14 +705,14 @@ def climatology_skill(sid, te, gb_pred, ts):
 # %% CELL: fairness
 
 N_BOOT = 4000      # bootstrap resamples
-BLOCK = 7          # block length (days) -> respects day-to-day autocorrelation
+BLOCK = 7          # block length in available observations; gaps can span more than a week
 AD_WIN = 90        # rolling window (days) for the adaptive interval
 N_SEEDS = 10       # random seeds for the boosting stability check
 
 
 def paired_ci(err_a, err_b, n_boot=N_BOOT, block=BLOCK, seed=0):
     """mean|err_a| - mean|err_b| with a 95% moving-block bootstrap interval.
-    Positive = method b has the smaller error. If the interval contains 0 we call it a tie."""
+    Positive = method b has smaller error. An interval spanning 0 is inconclusive."""
     d = np.abs(np.asarray(err_a, float)) - np.abs(np.asarray(err_b, float))
     n = len(d)
     rng = np.random.default_rng(seed)
@@ -758,6 +770,36 @@ def fair_baselines(ctx):
         gbm_vs_roll30=paired_ci(errs["roll30"], errs["gbm"]),
         gbm_beats_roll30_share=round(float((errs["gbm"].abs() < errs["roll30"].abs()).mean()), 3),
         hot_threshold=round(float(ctx["HOT_TH"]), 1), n_hot=int(hot.sum()), heat=heat)
+
+
+def persistence_baselines(ctx):
+    """Calendar-day persistence, scored against all methods on identical available dates.
+
+    Day-1 is the track's required yesterday-as-tomorrow reference. It assumes prompt
+    station access and is not deployable under our conservative 8-day archive lag.
+    Day-8 observes that same lag. Missing lagged readings are not filled with future
+    data; each comparison reports its own sample count and coverage.
+    """
+    sid = STATIONS[ctx["name"]][0]
+    history = fetch_station(sid)["TMAX"]
+    daily = history.reindex(pd.date_range(history.index.min(), ctx["meta"]["end"], freq="D"))
+    te = ctx["temp"]
+    roll30 = te.fc_tmax + te.bias_30.fillna(0.0)
+    out = {}
+    for lag, label in ((1, "yesterday"), (8, "archive_lag_8_days")):
+        pred = te.date.map(daily.shift(lag))
+        ok = pred.notna() & te.s_tmax.notna()
+        if not ok.any():
+            out[label] = dict(n=0, test_days=int(len(te)))
+            continue
+        out[label] = dict(
+            n=int(ok.sum()), test_days=int(len(te)), lag_calendar_days=lag,
+            persistence_mae=round(float((pred[ok] - te.s_tmax[ok]).abs().mean()), 3),
+            default_mae_same_days=round(float((te.fc_tmax[ok] - te.s_tmax[ok]).abs().mean()), 3),
+            roll30_mae_same_days=round(float((roll30[ok] - te.s_tmax[ok]).abs().mean()), 3),
+            gbm_mae_same_days=round(float((ctx["gb_pred"][ok] - te.s_tmax[ok]).abs().mean()), 3),
+        )
+    return out
 
 
 def adaptive_interval(ctx, level=CONF_LEVEL, win=AD_WIN):
@@ -880,10 +922,10 @@ XE_QUIET_END = "2024-11-30"    # injection window ends before the documented swi
 XE_JUMP_MIN = 0.5              # degC; smaller steps are not operationally interesting
 XE_P_MAX = 0.05
 XE_T_MIN = 2.0                 # |t| required for a local step to count as "moved"
-XE_MIN_SEG = 90                # days required either side of a changepoint
-XE_LOCAL_WIN = 150             # days either side used to judge a candidate date
+XE_MIN_SEG = 90                # available observations required on either side
+XE_LOCAL_WIN = 150             # available observations on either side of candidate
 XE_N_PERM = 400
-XE_BLOCK = 7                   # permutation block length (days)
+XE_BLOCK = 7                   # permutation block length (available observations)
 XE_MAX_DEPTH = 3
 XE_TOL_DAYS = 45               # distance allowed between detection and documented switch
 XE_SIZES = (0.5, 1.0, 2.0, 3.0)
@@ -940,7 +982,7 @@ def xe_segment(dates, vals, min_seg=XE_MIN_SEG, depth=0, max_depth=XE_MAX_DEPTH,
 
 
 def xe_local_step(dates, vals, at, win=XE_LOCAL_WIN):
-    """Step at `at`: mean(after) - mean(before) within +/- win days.
+    """Step at `at`: mean(after) - mean(before) within +/- win available observations.
 
     Returns (jump_degC, t_like, n_before, n_after), or None when a side is too thin.
     The t statistic divides the sample size by XE_BLOCK to allow for autocorrelation.
@@ -1074,7 +1116,7 @@ def xe_score(events, switches, tol_days=XE_TOL_DAYS):
 def xe_injection(days, S, F, E, sizes=XE_SIZES, tol_days=XE_TOL_DAYS, quiet_end=XE_QUIET_END):
     """Plant a known step in one source on a quiet stretch; score detection + attribution.
 
-    The control row (no injection) is the false-alarm baseline for the same window.
+    The control row (no injection) counts unverified events on the same real-data window.
     """
     days = np.asarray(days, dtype="datetime64[D]")
     keep = days <= np.datetime64(pd.Timestamp(quiet_end).date())
@@ -1193,6 +1235,7 @@ if __name__ == "__main__":
     for nm, (sid, la, lo) in STATIONS.items():
         ctx = ctxs[nm]
         fair[nm] = fair_baselines(ctx)
+        fair[nm]["persistence"] = persistence_baselines(ctx)
         fair[nm]["gbm_seeds"] = seed_check(ctx)
         adapt[nm], ad_frame = adaptive_interval(ctx)
         ctxs[nm]["te4"] = ctxs[nm]["te4"].merge(ad_frame, on="date", how="left")
@@ -1222,6 +1265,11 @@ if __name__ == "__main__":
 
     print("\n=== Three-way cross-examination ===")
     xe = crossexam_audit()
+
+    from robustness_checks import (run_robustness, print_robustness,
+                                  run_conservative_checks, print_conservative_checks)
+    robustness = run_robustness(ctxs)
+    detector_improvement = run_conservative_checks()
 
     # %% CELL: figures
     primary = all_res[PRIMARY]
@@ -1391,38 +1439,38 @@ if __name__ == "__main__":
         print("figure saved: weather_skill.png")
 
     # ---- fair baselines + adaptive interval ----
-    fig8, (axa, axb) = plt.subplots(1, 2, figsize=(13.5, 4.8), gridspec_kw=dict(width_ratios=[1.6, 1]))
+    fig8, (axa, axb) = plt.subplots(2, 1, figsize=(12, 8.4))
     names8 = list(fair.keys()); x8 = np.arange(len(names8)); w8 = 0.2
     series = [("raw", "default forecast", AMBER), ("const_bias", "fixed offset (train)", GRAY),
               ("roll30", "rolling 30-day bias", BLUE), ("gbm", "gradient boosting", TEAL)]
     for j, (key, lab, col) in enumerate(series):
         vals = [fair[n]["mae"][key] for n in names8]
         axa.bar(x8 + (j - 1.5) * w8, vals, w8, color=col, label=lab)
-        for i, v in enumerate(vals):
-            axa.text(i + (j - 1.5) * w8, v, f"{v:.2f}", ha="center", va="bottom", fontsize=8)
     axa.set_xticks(x8); axa.set_xticklabels([f"{n}\n(n={fair[n]['n']})" for n in names8])
     axa.set_ylabel("Tmax MAE on unseen test days (°C)")
-    axa.set_title("Fair comparison: a 30-day rolling bias is as good as gradient boosting")
-    axa.legend(frameon=False, fontsize=9)
+    axa.set_title("Temperature correction methods (lower MAE is better)")
+    axa.legend(frameon=False, fontsize=9, ncol=4, loc="upper right")
+    axa.set_ylim(0, 3.4)
     old = [conf[n]["split_conformal"]["coverage"] * 100 for n in names8]
     new = [adapt[n]["coverage"] * 100 for n in names8]
     axb.bar(x8 - 0.18, old, 0.36, color=GRAY, label="static split-conformal")
-    axb.bar(x8 + 0.18, new, 0.36, color=TEAL, label=f"rolling {AD_WIN}-day conformal")
+    axb.bar(x8 + 0.18, new, 0.36, color=TEAL, label=f"rolling {AD_WIN}-day empirical interval")
     for i, (o, nw) in enumerate(zip(old, new)):
         axb.text(i - 0.18, o, f"{o:.0f}%", ha="center", va="bottom", fontsize=9)
         axb.text(i + 0.18, nw, f"{nw:.0f}%", ha="center", va="bottom", fontsize=9, color=NAVY, fontweight="bold")
     axb.axhline(CONF_LEVEL * 100, ls="--", color=RED, lw=1.4)
     axb.set_xticks(x8); axb.set_xticklabels(names8); axb.set_ylim(0, 100)
     axb.set_ylabel("actual coverage of the 80% interval (%)")
-    axb.set_title("Interval coverage (dashed = 80% target)")
-    axb.legend(frameon=False, fontsize=9, loc="lower right")
-    fig8.tight_layout()
+    axb.set_title("Observed interval coverage (80% target; no guarantee under drift)")
+    axb.legend(frameon=False, fontsize=9, loc="lower left")
+    fig8.tight_layout(h_pad=2.5)
     fig8.savefig("weather_fair.png", dpi=150)
     print("figure saved: weather_fair.png")
 
     # ---- bias drift timeline ----
-    fig9, axes9 = plt.subplots(1, len(drift_tl), figsize=(14, 4.2), sharey=True)
-    for ax9, nm in zip(np.atleast_1d(axes9), drift_tl):
+    fig9, axes9 = plt.subplots(2, 4, figsize=(14, 7.4), sharey=True)
+    axes9 = np.asarray(axes9).ravel()
+    for ax9, nm in zip(axes9, drift_tl):
         tl = drift_tl[nm]; xs = tl.index.to_timestamp()
         ax9.axhline(0, color="#999", lw=0.8)
         ax9.plot(xs, tl.station_minus_forecast, color=NAVY, lw=1.8, marker="o", ms=3, label="station − default forecast")
@@ -1444,9 +1492,13 @@ if __name__ == "__main__":
         d = xe[nm]["series"]
         xs = np.array(d["days"], dtype="datetime64[D]")
         ax10.axhline(0, color="#999", lw=0.8)
-        ax10.plot(xs, d["sf"], color=NAVY, lw=0.9, label="station − forecast")
-        ax10.plot(xs, d["se"], color=AMBER, lw=0.9, label="station − reanalysis")
-        ax10.plot(xs, d["fe"], color=TEAL, lw=0.9, label="forecast − reanalysis")
+        # Preserve missing calendar days as gaps instead of connecting sparse records.
+        plot_days = pd.date_range(pd.Timestamp(xs.min()), pd.Timestamp(xs.max()), freq="D")
+        for key, color, label in [("sf", NAVY, "station − forecast"),
+                                   ("se", AMBER, "station − reanalysis"),
+                                   ("fe", TEAL, "forecast − reanalysis")]:
+            values = pd.Series(d[key], index=pd.to_datetime(xs)).reindex(plot_days)
+            ax10.plot(plot_days, values, color=color, lw=0.9, label=label)
         for r in xe[nm]["answer_key"]:
             ax10.axvline(np.datetime64(r["switch"]), color=RED, lw=1.6, ls="--")
             ax10.text(np.datetime64(r["switch"]), ax10.get_ylim()[1],
@@ -1500,20 +1552,20 @@ h1 {{ font-size:20px; color:var(--navy); margin:0 0 2px; }}
 .foot {{ font-size:11px; color:#8a97a5; margin-top:16px; line-height:1.5; }}
 </style></head><body><div class="wrap">
 <h1>WeatherAudit · forecast card (historical replay of {last.date:%Y-%m-%d})</h1>
-<div class="sub">{PRIMARY} (GHCN {STATIONS[PRIMARY][0]}) · {k['code']} climate · replay of a past day, built only from data available 8+ days earlier · prototype, not a weather service</div>
+<div class="sub">{PRIMARY} (GHCN {STATIONS[PRIMARY][0]}) · {k['code']} climate · past-day replay; correction uses station errors aged 8+ days · prototype, not a weather service</div>
 <div class="card">
   <div class="row"><span class="k">Default model forecast (Tmax)</span><span class="v">{last.fc_tmax:.1f} °C</span></div>
   <div class="row"><span class="k">Mean of {last.n_models:.0f} weather models</span><span class="v">{last.consensus:.1f} °C</span></div>
   <div class="row"><span class="k">Corrected (30-day rolling bias)</span><span class="v hl">{last.r30_pred:.1f} °C</span></div>
-  <div class="row"><span class="k">80% interval (rolling conformal)</span><span class="v">{last.ad_lo:.1f} – {last.ad_hi:.1f} °C</span></div>
-  <div class="row"><span class="k">Trust score</span><span class="v warn">{last.trust:.0f}/100</span></div>
+  <div class="row"><span class="k">80% target interval (empirical)</span><span class="v">{last.ad_lo:.1f} – {last.ad_hi:.1f} °C</span></div>
+  <div class="row"><span class="k">Heuristic agreement score</span><span class="v warn">{last.trust:.0f}/100</span></div>
   <div class="row"><span class="k">What the station then measured</span><span class="v">{last.s_tmax:.1f} °C ({'inside' if inside else 'outside'} the interval)</span></div>
 </div>
 <div class="grid">
   <div class="tile"><h3>Model agreement</h3><div class="big">{last.n_models:.0f} models</div><div class="note">spread today: {last.spread:.2f} °C</div></div>
   <div class="tile"><h3>Long-term trend</h3><div class="big">{tt.get('slope_decade', 0):+.2f} °C/decade</div><div class="note">{tt.get('years', 0)} years, {tt.get('first_year', '')}–{tt.get('last_year', '')}</div></div>
   <div class="tile"><h3>Interval coverage</h3><div class="big">{ad['coverage']*100:.0f}%</div><div class="note">target {int(CONF_LEVEL*100)}%, over {ad['n']} test days (a static interval only reached {c['split_conformal']['coverage']*100:.0f}%)</div></div>
-  <div class="tile"><h3>Trust audit</h3><div class="big">{'passes' if cd['monotonic'] else 'mixed'}</div><div class="note">low-trust days err {cd['bins']['low']}°C vs high-trust {cd['bins']['high']}°C</div></div>
+  <div class="tile"><h3>Score diagnostic</h3><div class="big">{'passes' if cd['monotonic'] else 'mixed'}</div><div class="note">low-trust days err {cd['bins']['low']}°C vs high-trust {cd['bins']['high']}°C</div></div>
 </div>
 <div class="foot">This card replays the most recent audited day; it is not a live forecast. The correction removes the forecast's mean error over a 30-day window that ends 8 days earlier; the interval is the 80th percentile of the recent absolute errors. The trust score combines model agreement with the forecast's recent accuracy. Prototype — not for safety-critical decisions.</div>
 </div></body></html>"""
@@ -1575,6 +1627,13 @@ h1 {{ font-size:20px; color:var(--navy); margin:0 0 2px; }}
         "rolling-30, 2 days ahead": lt["day2"]["roll30_mae"],
         "1-day-ahead gain [95% CI]": _ci(lt["day1"]["roll30_vs_raw"]),
     } if "day1" in lt else {"error": lt.get("error")}) for nm, lt in lead.items()})
+    persistence_rows = []
+    for nm, metrics in fair.items():
+        for label, values in metrics["persistence"].items():
+            persistence_rows.append(dict(station=nm, reference=label, **values))
+    print("\n=== Table 2b. Calendar-day persistence; all errors in each row use identical dates ===")
+    display(pd.DataFrame(persistence_rows).set_index(["station", "reference"]))
+
     print("\n=== Table 3. Lead-time check (Previous Runs API, daily max rebuilt from hourly values) ===")
     display(t3)
 
@@ -1592,8 +1651,8 @@ h1 {{ font-size:20px; color:var(--navy); margin:0 0 2px; }}
         "static split-conformal coverage": conf[nm]["split_conformal"]["coverage"],
         "static split-conformal width (C)": conf[nm]["split_conformal"]["width"],
         "static quantile-GBM coverage": conf[nm]["quantile"]["coverage"],
-        "rolling 90-day conformal coverage": adapt[nm]["coverage"],
-        "rolling 90-day conformal width (C)": adapt[nm]["width"],
+        "rolling 90-day empirical coverage": adapt[nm]["coverage"],
+        "rolling 90-day empirical width (C)": adapt[nm]["width"],
         "mean bias, training period (C)": drift[nm]["train_mean_bias"],
         "mean bias, test period (C)": drift[nm]["test_mean_bias"],
     } for nm in fair})
@@ -1647,7 +1706,7 @@ h1 {{ font-size:20px; color:var(--navy); margin:0 0 2px; }}
         if not ij:
             continue
         ctrl_rows.append(dict(city=nm, window=" .. ".join(ij["window"]), days=ij["n_days"],
-                              injected_at=ij["injected_at"], false_alarms=ij["control_events"]))
+                              injected_at=ij["injected_at"], unverified_events=ij["control_events"]))
         for r in ij["rows"]:
             inj_rows.append(dict(city=nm, **r))
     if inj_rows:
@@ -1660,6 +1719,8 @@ h1 {{ font-size:20px; color:var(--navy); margin:0 0 2px; }}
         print("    (quiet window only, i.e. before the documented switch)")
         display(pooled)
         display(by_src)
-        print("\n=== Table 11. Control runs with nothing injected: the false-alarm baseline ===")
+        print("\n=== Table 11. Control runs with nothing injected: unverified natural events ===")
         display(pd.DataFrame(ctrl_rows).set_index("city"))
+    print_robustness(robustness)
+    print_conservative_checks(detector_improvement)
     print("DONE")

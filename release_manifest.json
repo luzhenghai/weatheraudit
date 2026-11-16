@@ -1,0 +1,193 @@
+{
+  "project": "WeatherAudit",
+  "review_date": "2026-11-16",
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 39,
+      "sha256": "be3f70e0bd857237c84a652ed86fd73708c03324b410aec66e17de7c5f1566da"
+    },
+    {
+      "file": "cache.zip",
+      "bytes": 5189210,
+      "sha256": "bbd19d03083079d7b8b3d69baa2cf35b067197208fac0eb96c86c307824d3008"
+    },
+    {
+      "file": "cache_manifest.json",
+      "bytes": 68474,
+      "sha256": "f4fd9d0626eaa1360698f455393ddc04902d72836854fee853f98914af0afbc4"
+    },
+    {
+      "file": "cb2d00125ef1f4427a650bd05585fe5f.jpg",
+      "bytes": 226222,
+      "sha256": "572dcc2a59830fdd7a1d87f2399e1fdb504bfca8fa3895c49a79bce13f97effb"
+    },
+    {
+      "file": "detector_improvement_protocol.json",
+      "bytes": 877,
+      "sha256": "2bb46ad4a36f2f3809e70a39275b9386f5af7ad73debe3dfd584c0174b1c0ac7"
+    },
+    {
+      "file": "detector_improvement_results.json",
+      "bytes": 49258,
+      "sha256": "f594a41bb12e972c1a7983351bba1bb17bdbed5fb2c8d9bfc837020ccc98069a"
+    },
+    {
+      "file": "README.md",
+      "bytes": 13259,
+      "sha256": "8771ebca376be2478d6ae2da6a186d15c2c0f34a6662f17af33791c5a244ed13"
+    },
+    {
+      "file": "REPRODUCIBILITY.md",
+      "bytes": 3660,
+      "sha256": "423d3a90bac67f61494374991536e6ba3959e99db706d6a5e53c167993a0fe1a"
+    },
+    {
+      "file": "requirements-lock.txt",
+      "bytes": 103,
+      "sha256": "d740a05736338dee136e1ec093cf59b6075d9287d89a2ad778469428745243bb"
+    },
+    {
+      "file": "requirements-timesfm.txt",
+      "bytes": 30,
+      "sha256": "9f9ac78dc1fd38aa9d7ec2b0f424e22f00973a01ce5b7bd727b7bb5f884a45c2"
+    },
+    {
+      "file": "requirements.txt",
+      "bytes": 58,
+      "sha256": "cf47f81702bd96ac3bba08f738c36b50d28456e8e227600a3a82579041480482"
+    },
+    {
+      "file": "results_v4.json",
+      "bytes": 166591,
+      "sha256": "95f6553283beaef4519c67d4d3c2d84a5dea68c1705ad755aaf499aa20b7a4b3"
+    },
+    {
+      "file": "ROBUSTNESS.md",
+      "bytes": 10460,
+      "sha256": "3abfd87fe179738968c1325b84a6a3d65b7832e132e4a337120a5435c170bcb5"
+    },
+    {
+      "file": "robustness_checks.py",
+      "bytes": 19409,
+      "sha256": "e2682ad8af1f04151b9b57fb2d35154d491db4004a50c9432af0a42400f19906"
+    },
+    {
+      "file": "robustness_protocol.json",
+      "bytes": 942,
+      "sha256": "d167bd38d4e9035a6cce2cadbe6e1a32c4ca21d0c001f4e3565efbb6d7d35d91"
+    },
+    {
+      "file": "robustness_results.json",
+      "bytes": 71346,
+      "sha256": "c8dd1438c2ee08d40cb486f3e79639e684133d2b2d06fd50a129ce7af4188bd4"
+    },
+    {
+      "file": "TIMESFM_NOTE.md",
+      "bytes": 2222,
+      "sha256": "914c1ce1c53a8eadec2723aef722e9b909faf8d2f61af58d6321fa0eac7a04d6"
+    },
+    {
+      "file": "tm_experiment.py",
+      "bytes": 4083,
+      "sha256": "f6454e7d6f4a5a2d1c0e4da7e1f21d6a4f35cbae0fadade2cababd2f2906918b"
+    },
+    {
+      "file": "tm_results.json",
+      "bytes": 544,
+      "sha256": "0f4fb7b6239878b9af3e5d71a24abf0a8f32bbc5d26e04951373bdf831709e2a"
+    },
+    {
+      "file": "verify_release.py",
+      "bytes": 10046,
+      "sha256": "a2a9b2126ecb968eacd045f2164e819b8808ea99be9fa8af61761afdfe5ad601"
+    },
+    {
+      "file": "VIDEO_CREDITS.md",
+      "bytes": 1796,
+      "sha256": "ebbd01b413fa91eb8a9bf750fea63f2978c134276198040b172e7176bdcbdd0e"
+    },
+    {
+      "file": "weather_audit.png",
+      "bytes": 218284,
+      "sha256": "36577dc10a16c7b23007aca32232ddf8680bccf61435497cef12fabba68702bb"
+    },
+    {
+      "file": "weather_climate.png",
+      "bytes": 96479,
+      "sha256": "33ba49009bc495dcd460b7bcb2d987ebdeefc19d873c0ce50c304b24eac6bbfb"
+    },
+    {
+      "file": "weather_climate_profile.png",
+      "bytes": 207432,
+      "sha256": "23a9e6c53eb931d57a28c455c8e31454816168a8fda5a30a69877ed0688ece4e"
+    },
+    {
+      "file": "weather_crossexam.png",
+      "bytes": 806394,
+      "sha256": "34f0a6d6414205f54eb63c41a59e6c6ecdb9b7d10f14bbaac8cac539a6771916"
+    },
+    {
+      "file": "weather_drift.png",
+      "bytes": 335530,
+      "sha256": "31946e9e8059e3b435c5b48737a8f1dc49b0bc8912716f3bd2c1f74b230cdd63"
+    },
+    {
+      "file": "weather_fair.png",
+      "bytes": 128642,
+      "sha256": "26d73884261463cfa826a7432d4bffbdcdd20ab54cd235ee2be810e48a16901e"
+    },
+    {
+      "file": "weather_multimodel.png",
+      "bytes": 48294,
+      "sha256": "154c002cee4e595066256ac66a2b8df6368237d6867bb5a640605947532050ab"
+    },
+    {
+      "file": "weather_report.html",
+      "bytes": 3917,
+      "sha256": "b908176390b68a640ee268cf2b21ffb8a5cf5a33ea4626d11f47932a3f5add44"
+    },
+    {
+      "file": "weather_skill.png",
+      "bytes": 66086,
+      "sha256": "48644ba5c22ed2ff2998ad7683329a71350b99a3e67a2741b815968e57b0813a"
+    },
+    {
+      "file": "weather_smartbase.png",
+      "bytes": 46095,
+      "sha256": "66a33424521816e5b590fded27c0015f29ec6733f414a092441e08a7c517323a"
+    },
+    {
+      "file": "weather_uncertainty.png",
+      "bytes": 171709,
+      "sha256": "a4a52f289f6186b0ffc89dba22993f81918c4ddf5e7973fa09911c36042003c6"
+    },
+    {
+      "file": "WeatherAudit.ipynb",
+      "bytes": 2238228,
+      "sha256": "02bfb67109a947eee45703b5d991855d31c849f6c5f29c532f829f6914a63758"
+    },
+    {
+      "file": "weatheraudit.py",
+      "bytes": 88369,
+      "sha256": "6e5594fbb44fa8794226f6a73e3d10912906f041e5796b1194b11d1d9f6a2ab2"
+    },
+    {
+      "file": "WeatherAudit_writeup.docx",
+      "bytes": 39457,
+      "sha256": "ea88d50e63edcb7a4cc798ec72cd7c1f79364ca5005bd2e4c06254664f26eca1"
+    },
+    {
+      "file": "WeatherAudit_writeup.pdf",
+      "bytes": 210462,
+      "sha256": "0498b8ff156e33df872118bd1bdacdf851c2a30eaa5805f9d5dd474800da1909"
+    },
+    {
+      "file": "WRITEUP.md",
+      "bytes": 4072,
+      "sha256": "c21e1da824b8f6e40f9a3cf4661c3c7ec10125fb8ed24ad9d7af6e15abbda732"
+    }
+  ],
+  "video_file": "weather_audit_demo_v6.mp4 (shared separately)",
+  "video_sha256": "ff1b6226fd09e06d7284914cc273c01ef500ff441ceb639230eae3a9e276a232"
+}

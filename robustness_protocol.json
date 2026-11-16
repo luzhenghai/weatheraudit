@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "seed": 20261116,
+  "reporting_lags": [
+    1,
+    8,
+    14,
+    30,
+    60
+  ],
+  "local_utc_offsets": {
+    "Quzhou": 8,
+    "Shanghai": 8,
+    "Hotan": 8,
+    "Osaka": 9,
+    "Chuncheon": 9,
+    "Gangneung": 9,
+    "Pohang": 9,
+    "Busan": 9
+  },
+  "station_label_shifts": [
+    -1,
+    0,
+    1
+  ],
+  "calendar_bootstrap_draws": 9999,
+  "comparison_family": "8 rolling-vs-raw plus 8 boosting-vs-rolling",
+  "multiplicity": "Holm, two-sided approximate centered calendar-week bootstrap p-values",
+  "signed_steps": [
+    -2.0,
+    -0.5,
+    0.5,
+    2.0
+  ],
+  "onset_fractions": [
+    0.35,
+    0.5,
+    0.65
+  ],
+  "null_trials_per_setting": 50,
+  "null_ar_coefficients": [
+    0.3,
+    0.8
+  ],
+  "null_days": 730,
+  "detector": "original detector and thresholds, unchanged",
+  "status": "additional retrospective checks; no settings selected from these results"
+}

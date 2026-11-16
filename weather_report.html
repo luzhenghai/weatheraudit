@@ -26,20 +26,20 @@ h1 { font-size:20px; color:var(--navy); margin:0 0 2px; }
 .foot { font-size:11px; color:#8a97a5; margin-top:16px; line-height:1.5; }
 </style></head><body><div class="wrap">
 <h1>WeatherAudit · forecast card (historical replay of 2026-09-22)</h1>
-<div class="sub">Quzhou (GHCN CHM00058633) · Cfa climate · replay of a past day, built only from data available 8+ days earlier · prototype, not a weather service</div>
+<div class="sub">Quzhou (GHCN CHM00058633) · Cfa climate · past-day replay; correction uses station errors aged 8+ days · prototype, not a weather service</div>
 <div class="card">
   <div class="row"><span class="k">Default model forecast (Tmax)</span><span class="v">33.6 °C</span></div>
   <div class="row"><span class="k">Mean of 3 weather models</span><span class="v">31.4 °C</span></div>
   <div class="row"><span class="k">Corrected (30-day rolling bias)</span><span class="v hl">32.1 °C</span></div>
-  <div class="row"><span class="k">80% interval (rolling conformal)</span><span class="v">30.4 – 33.9 °C</span></div>
-  <div class="row"><span class="k">Trust score</span><span class="v warn">43/100</span></div>
+  <div class="row"><span class="k">80% target interval (empirical)</span><span class="v">30.4 – 33.9 °C</span></div>
+  <div class="row"><span class="k">Heuristic agreement score</span><span class="v warn">43/100</span></div>
   <div class="row"><span class="k">What the station then measured</span><span class="v">29.9 °C (outside the interval)</span></div>
 </div>
 <div class="grid">
   <div class="tile"><h3>Model agreement</h3><div class="big">3 models</div><div class="note">spread today: 1.26 °C</div></div>
   <div class="tile"><h3>Long-term trend</h3><div class="big">+0.23 °C/decade</div><div class="note">66 years, 1951–2022</div></div>
   <div class="tile"><h3>Interval coverage</h3><div class="big">80%</div><div class="note">target 80%, over 254 test days (a static interval only reached 55%)</div></div>
-  <div class="tile"><h3>Trust audit</h3><div class="big">passes</div><div class="note">low-trust days err 2.47°C vs high-trust 1.28°C</div></div>
+  <div class="tile"><h3>Score diagnostic</h3><div class="big">passes</div><div class="note">low-trust days err 2.47°C vs high-trust 1.28°C</div></div>
 </div>
 <div class="foot">This card replays the most recent audited day; it is not a live forecast. The correction removes the forecast's mean error over a 30-day window that ends 8 days earlier; the interval is the 80th percentile of the recent absolute errors. The trust score combines model agreement with the forecast's recent accuracy. Prototype — not for safety-critical decisions.</div>
 </div></body></html>

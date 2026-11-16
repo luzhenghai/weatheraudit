@@ -1,0 +1,42 @@
+[
+ {
+  "city": "Quzhou",
+  "n": 254,
+  "timesfm_mae": 3.778
+ },
+ {
+  "city": "Shanghai",
+  "n": 256,
+  "timesfm_mae": 3.291
+ },
+ {
+  "city": "Osaka",
+  "n": 300,
+  "timesfm_mae": 4.524
+ },
+ {
+  "city": "Hotan",
+  "n": 258,
+  "timesfm_mae": 4.258
+ },
+ {
+  "city": "Chuncheon",
+  "n": 300,
+  "timesfm_mae": 4.666
+ },
+ {
+  "city": "Gangneung",
+  "n": 299,
+  "timesfm_mae": 4.984
+ },
+ {
+  "city": "Pohang",
+  "n": 300,
+  "timesfm_mae": 3.625
+ },
+ {
+  "city": "Busan",
+  "n": 300,
+  "timesfm_mae": 3.383
+ }
+]

@@ -1,92 +1,101 @@
-# WeatherAudit: grading weather forecasts against real station thermometers
+# WeatherAudit
 
-**Track:** AI + Climate · **Team:** solo entry · **Code:** [`WeatherAudit.ipynb`](WeatherAudit.ipynb), outputs saved · a prototype, not a weather service
+**Track:** AI + Climate · **Team:** solo entry · **Starting point:** our own idea
 
-## The problem
+WeatherAudit audits station-level temperature corrections for local heat planning. A simple rolling bias rule removes most of the measured error; when that bias moves, a three-source check suggests which record to investigate. It is a retrospective prototype, not an operational warning service.
 
-Weather forecasts are usually checked against other model products on a coarse grid, not against a thermometer. We asked how wrong the forecast daily maximum temperature is at a real weather station, and whether that error can be removed.
+**Start here:** [one-page write-up](WeatherAudit_writeup.pdf) · [executed notebook](WeatherAudit.ipynb) · [historical replay card](weather_report.html). All notebook outputs are saved. This README gives the supporting detail. GitHub displays HTML source for the replay card; download that file and open it in a browser to view the card.
 
-Trying to remove it turned up a harder problem. A *static* correction made the forecast **worse**: at Quzhou the forecast ran about 1.2 °C cold during training and 1.7 °C warm during the test window. Something underneath had moved. But when a station, a forecast and a reanalysis disagree, which one changed? That question is what the project ended up being about.
+## The problem and intended user
 
-## What we built
+A local climate-service analyst must decide whether a corrected forecast is dependable enough to inform heat advice. A correction can become stale when either the forecast or the observing record changes. We focus on Quzhou, China, with seven additional stations in China, Japan and South Korea to test how much the result varies. We have not measured effects on users, health outcomes or emissions.
 
-A notebook that grades archived forecasts against public weather stations (Quzhou and Shanghai in China, Osaka in Japan), compares six corrections under one no-peeking rule, and then **cross-examines three data sources to identify which one changed.**
+## What we built and added
 
-## What we added
-
-This is our own idea, not a suggested project.
-
-* **Station truth.** Our first version used ERA5 reanalysis as the truth and the forecast looked almost perfect, because both come from the same kind of model. We switched to station thermometers.
-* **A fair baseline.** Gradient boosting is compared with a one-line rule that sees the same information, with a 95% interval on the difference — and it loses.
-* **Three-way cross-examination**, below: a cheap way to tell *which* source moved, validated blind.
+The notebook takes archived model forecasts and quality-screened NOAA station records, returns error comparisons and heat-alert counts, and produces a replay card with a rolling correction and empirical interval. Our contribution is the comparison against simple rules and a three-source attribution check, with published failures and an independent provenance field used for retrospective checking.
 
 ## How it works
 
-**Data.** Station readings from NOAA GHCN-Daily; archived forecasts, forecasts issued 1–2 days earlier, and ERA5 from Open-Meteo. Only days the station reported are used. The test window is the last 305 calendar days (254–300 station days per city); training is everything before (≈1,100 station days in China, 375 in Osaka).
+Temperature training uses earlier dates; the final **306 calendar dates** form the test window, with 254–300 reported days per station. Training counts are 375–1,109. Chinese windows are 2025-11-21 to 2026-09-22; Japanese/Korean windows are 2026-01-05 to 2026-11-06. Missing target readings are excluded. The model is fitted before the split; rolling corrections and lag features may update with earlier test observations only after an assumed eight-day archive delay. This delay is a conservative design assumption, not a verified per-record release timestamp. Early stopping samples only the pre-test training set; the outer evaluation is chronological. These are exploratory retrospective results, not a sealed prospective study.
 
-**Correction model.** A `HistGradientBoostingRegressor` predicts the forecast error from forecast values, season and recent errors; a classifier does the same for rain. Features from past errors use readings at least 8 days old. Baselines: default forecast, fixed and monthly offsets, rolling 7- and 30-day bias. Ranges come from conformal prediction, static and rolling.
-
-**Cross-examination.** Three sources report the same daily maximum: station **S**, forecast **F**, reanalysis **E**. Their differences obey an exact identity, `d_SF = d_SE − d_FE`, so only two are independent. If exactly one source steps, exactly one difference stays flat — and that names it:
-
-| what changed | S−F | S−E | F−E |
-|---|---|---|---|
-| the station | steps | steps | **flat** |
-| the forecast | steps | **flat** | steps |
-| the reanalysis | **flat** | steps | steps |
-
-Changepoints come from max-|CUSUM| with binary segmentation, tested by block permutation (7-day blocks, 400 iterations, p ≤ 0.05); a step counts as "moved" at |jump| ≥ 0.5 °C and |t| ≥ 2.0.
+`HistGradientBoostingRegressor` learns the station-minus-forecast error using forecast variables, season and delayed past errors. We compare it with fixed/monthly offsets, rolling 7/30-day bias and persistence. Differences use 4,000 paired moving-block bootstrap resamples, each block containing seven consecutive **available observations**; gaps can make a block longer than a week. These original intervals are approximate and unadjusted. The supplementary analysis uses calendar-week blocks and Holm adjustment over 16 comparisons. Ten training seeds check stability.
 
 ## Results
 
-Mean absolute error of daily maximum temperature on the test window, °C:
+Daily maximum temperature MAE, in °C, on each station's full temperature test set:
 
-| Method | Quzhou | Shanghai | Osaka |
-|---|---|---|---|
-| Default forecast (baseline) | 1.86 | 0.98 | 1.52 |
-| Monthly offset learned on training data | 3.00 | 1.96 | 0.68 |
-| Rolling 30-day bias (one line of code) | **1.20** | **0.86** | 0.68 |
-| Gradient boosting (our model) | 1.31 | 0.94 | **0.65** |
-| Gradient boosting, range over 10 random seeds | 1.26–1.39 | 0.91–0.95 | 0.64–0.67 |
-| Boosting gain over rolling bias, 95% interval | −0.12 (−0.25, +0.01) | −0.07 (−0.22, +0.05) | +0.04 (0.00, +0.07) |
-| 80% range, days covered: static → rolling | 55% → 80% | 81% → 78% | 83% → 77% |
+| Station (test days) | Default | Monthly offset | Rolling 30-day | Boosting |
+|---|---:|---:|---:|---:|
+| Quzhou (254) | 1.86 | 3.00 | 1.20 | 1.31 |
+| Shanghai (256) | 0.98 | 1.96 | 0.86 | 0.94 |
+| Osaka (300) | 1.52 | 0.68 | 0.68 | 0.65 |
+| Hotan (258) | 1.18 | 1.41 | 0.92 | 1.05 |
+| Chuncheon (300) | 1.58 | 1.21 | 1.12 | 1.08 |
+| Gangneung (299) | 1.25 | 1.14 | 1.02 | 1.03 |
+| Pohang (300) | 1.70 | 0.99 | 0.96 | 0.84 |
+| Busan (300) | 1.90 | 1.09 | 1.05 | 1.01 |
 
-* **The forecast can be corrected**: the rolling rule cuts error by 0.66 °C (Quzhou), 0.84 °C (Osaka), 0.12 °C (Shanghai), all intervals excluding zero.
-* **Our model does not beat the one-line rule.** It ties in Quzhou and Shanghai, wins by 0.04 °C in Osaka. We report this as the main machine-learning result.
-* **Heat alerts:** of Osaka's 30 hot days the forecast catches 9, the rolling rule 16 (2 false alarms), boosting 25 (3 false alarms).
+* The rolling rule improves on the default at all eight stations; each approximate 95% gain interval excludes zero. Boosting also has lower mean error than default at all eight, with seven intervals excluding zero.
+* Boosting has lower mean error than the rolling rule at four stations. Only **Osaka and Pohang** have an original, unadjusted positive gain interval excluding zero; **Hotan** is significantly worse, and five comparisons are inconclusive. A confidence interval spanning zero means insufficient evidence of a difference, not proof of equality.
+* At Quzhou the monthly offset increases MAE from 1.86 to 3.00 °C, while the rolling rule reduces it to 1.20 °C. Mean station-minus-forecast error changes from +1.17 °C in training to −1.73 °C in testing. This is evidence of instability; the train/test contrast alone does not date or explain the change.
+* In the separate **day-ahead Previous Runs** check, raw MAE is **1.13–2.06 °C**, and rolling-corrected MAE is **1.03–1.48 °C**. At Quzhou it is **2.06 → 1.48 °C**. This is the more relevant check for planning tomorrow.
 
-**The cross-examination, scored blind.** Every GHCN observation carries source and measurement flags. The detector never reads them. All four stations changed their TMAX flags on 2025-01-01, from `S|` to `2|H` — NOAA documents `S` as the daily summary, `2` as its successor feed, `H` as "highest or lowest hourly temperature". So the record stopped being a daily summary and became derived from hourly values. Against that answer key:
+**Required persistence comparison.** Yesterday's observed maximum predicts today's. Each row below scores every method on exactly the same dates with a valid previous-calendar-day reading. This assumes prompt station access, so it is an optimistic reference under our eight-day archive delay; Table 2b also reports an eight-day persistence reference with matching availability.
 
-| Station | Detected | Days off | Verdict | |
-|---|---|---|---|---|
-| Quzhou CHM00058633 | 2024-12-22 | 10 | station changed | ✓ |
-| Hotan CHM00051828 (2,500 km inland, desert) | 2025-01-22 | 21 | station changed | ✓ |
-| Shanghai CHM00058362 | 2025-02-09 | 39 | station changed | ✓ |
-| Osaka JAM00047772 | — | — | missed | ✗ |
+| Station | Common days | Yesterday MAE | Default | Rolling 30-day | Boosting |
+|---|---:|---:|---:|---:|---:|
+| Quzhou | 239 | 2.88 | 1.84 | 1.22 | 1.31 |
+| Shanghai | 243 | 2.27 | 0.98 | 0.86 | 0.95 |
+| Osaka | 299 | 2.04 | 1.53 | 0.68 | 0.65 |
+| Hotan | 247 | 2.44 | 1.14 | 0.92 | 1.01 |
+| Chuncheon | 299 | 2.73 | 1.58 | 1.12 | 1.08 |
+| Gangneung | 297 | 2.74 | 1.25 | 1.02 | 1.02 |
+| Pohang | 299 | 2.58 | 1.70 | 0.96 | 0.84 |
+| Busan | 299 | 1.94 | 1.90 | 1.05 | 1.01 |
 
-**3 of 4 correct, no wrong labels.** At Quzhou the step is unambiguous: S−F moved −2.13 °C (t = −4.9) and S−E −1.97 °C (t = −3.7), while F−E stayed flat at +0.16 °C (t = +0.3). Osaka was missed because the station reported only **1 usable day** in the 150 days before the switch (96 days in 2022, 8 in 2023, 3 in 2024) — a data gap, not a failure of the test. The method also separates a *different* event: at Quzhou on 2025-09-29 the verdict is "forecast changed" (S−F −2.48, F−E +1.98, S−E flat), matching a drift we measured separately between the default forecast and ICON.
+**Decision and uncertainty checks.** A hot day exceeds the station's training 90th percentile. At Osaka, boosting catches 25 of 30 such days versus 9 for the default, with 3 false alerts; Quzhou has only 2 hot days, so local heat-alert effectiveness is unproven. Rolling intervals target 80% and empirically cover **76–81%** across stations, without a distribution-free guarantee under drift. After preserving missing precipitation as missing in lag features, rain Brier score improves over raw probability at **7/8** stations but over the training-frequency baseline at **6/8**; fixed-threshold umbrella costs improve only at Quzhou (610 versus 898 per 1,000 observed test days). Rain samples are just 56–129 days, and thresholds chosen on training predictions can overfit.
 
-**Where it fails.**
+## Which record changed
 
-* **The detector is blind to small steps.** Planting steps of known size on a quiet stretch: 0.5 °C found 3 times in 9 and attributed once; 2 °C found 8 of 9, attributed 6; 3 °C found 9 of 9, attributed 7. Planted *station* steps are weakest — found 8 of 12, attributed only 2, usually "ambiguous".
-* **Its false-alarm rate is not zero.** With nothing planted the same windows still return 12 events (Quzhou 4, Shanghai 1, Hotan 7). A verdict is a reason to check a source, not proof.
-* **The sources are not fully independent** — forecast and reanalysis are both model output — and the method says *which* source moved, never *why*.
-* Four stations, three in China; detections land 10–39 days from the documented switch, not on it.
-* On forecasts really issued a day ahead the error is larger (2.06 / 1.13 / 1.74 °C); the rolling rule still helps (1.48 / 1.03 / 1.30 °C). Shanghai has 5 hot days and Quzhou 2, where corrections do not help. Rain is tested on 56–129 days, beats a constant base rate only in Osaka, and does not lower the umbrella cost. In Quzhou raw ICON (1.02 °C) beats everything we did. Quzhou is ~114 km from the author's home, so this is not a doorstep forecast.
+With station S, forecast F and ERA5 E, the identity `S−F = (S−E) − (F−E)` gives a diagnostic pattern: if only S steps, both differences involving S step while F−E stays flat. CUSUM segmentation proposes dates; block permutation and local magnitude/t-like thresholds screen them. Correlated sources or simultaneous changes can defeat attribution. The algebra is exact; attribution is conditional.
 
-## What we'd do next
+The detector does **not** receive provenance flags as input. In a retrospective check of four documented `S| → 2|H` switches on 2025-01-01, it attributes three to the station record within a **±45-day** tolerance: Quzhou 10 days away, Hotan 21, Shanghai 39. Osaka is missed and has only one usable observation in the preceding 150 calendar days. There are no wrong source labels **among those four scored switches**; this is not a detector-wide accuracy or zero-false-positive claim, and development was not independently blinded.
 
-Run the cross-examination over many stations at once to see how often provenance quietly changes; make the rolling correction the main method and test it 2–7 days ahead; have a correction refuse to fire when the detector says its calibration period is stale; log a thermometer at home for real local truth.
+NOAA defines `S` as GSOD, already derived from hourly synoptic reports; `2` is its SSOD version 2 successor, and `H` denotes a maximum/minimum of hourly temperatures. These flags document a **provenance/processing change**. They do not establish that a sensor, observation-day boundary or physical temperature changed.
 
-## Sources
+Positive injected steps of +0.5 °C are found in 3/9 trials and correctly attributed in 1/9; +2 °C in 8/9 and 6/9. Station injections are attributed correctly in only 2/12 trials. The unmodified real-data control windows return **12 unverified events**; without ground truth for every natural change, that count is not an identified false-positive rate.
 
-* NOAA GHCN-Daily (stations CHM00058633, CHM00058362, JAM00047772, CHM00051828) and its `ghcnd-readme.txt` flag definitions: https://registry.opendata.aws/noaa-ghcn/
-* Open-Meteo Historical Forecast, Previous Runs and Archive (ERA5) APIs, CC BY 4.0: https://open-meteo.com/
-* Angelopoulos and Bates, *A Gentle Introduction to Conformal Prediction*: https://arxiv.org/abs/2107.07511
-* Libraries: pandas, NumPy, SciPy, scikit-learn, matplotlib, requests.
-* AI tools: AI coding assistants (Claude and WorkBuddy) were used heavily to write and debug the code, run the experiments and draft this text. The author chose the question and directed the work.
+## Added robustness and detector improvements
 
-Every number above is printed by the notebook. To reproduce, open `WeatherAudit.ipynb` with `cache.zip` beside it and run all cells (about one minute). Gradient-boosting figures can move by a few hundredths of a degree with a different scikit-learn version; nothing else changes.
+The added checks use fixed settings and the same cached data; they are retrospective additions, not a new independent station test set. [ROBUSTNESS.md](ROBUSTNESS.md) reports the complete protocol, matched-date tables and unfavorable outcomes.
 
-![Three-way cross-examination: dashed red is the documented GHCN source change, dotted navy is what the flag-blind detector found](weather_crossexam.png)
+* Reporting-lag assumptions of 1, 8, 14, 30 and 60 days preserve lower rolling mean MAE than raw at all eight stations. This tests sensitivity; actual record publication times remain unknown.
+* Rebuilding day-ahead maxima at local UTC+9 for Japan/Korea changes raw MAE by at most 0.006 °C and rolling MAE by at most 0.012 °C on identical dates. Whole-day station-label shifts materially worsen error. Local civil days do not establish NOAA observation-day timing.
+* Calendar-week resampling and Holm correction across 16 comparisons support rolling gains at seven stations; Shanghai is inconclusive. No boosting gain over rolling retains support; Hotan remains worse. The earlier Osaka/Pohang intervals are explicitly unadjusted.
+* Signed injections and known-null simulations now test both directions, three onset dates and autocorrelated background. A conservative detector adds 28-observation dependence blocks, three Bonferroni-screened root searches and stricter local screening. Its full validation and loss of real-switch matches are reported in the supplement.
 
-![Fair comparison of correction methods and range coverage](weather_fair.png)
+## Limitations and next steps
+
+Original API calls use UTC+8; the added Previous Runs sensitivity check reaggregates Japan/Korea to local UTC+9. NOAA daily labels can still use other observation windows. These are comparisons with a station record, not a proven harmonization of identical 24-hour measurements. Station gaps, changing reporting protocols and site selection limit generalization. Forecast and reanalysis are dependent model products. A heuristic agreement score and unhomogenized single-station climate trends are context, not calibrated probabilities or climate-change attribution. In Quzhou raw ICON (1.02 °C) outperforms our rolling correction, which makes model selection another useful baseline.
+
+The TimesFM run is retained only as a legacy exploratory result: its long forecast horizon and compressed missing-day history prevent a fair comparison with weather forecasts (`TIMESFM_NOTE.md`). We draw no physics-versus-pattern-learning conclusion from it.
+
+Next, verify actual daily observation windows and publication times, lock settings before testing new stations, evaluate an alarm-gated correction prospectively, and validate actual heat-planning decisions with a local user.
+
+## Reproduce
+
+Keep the notebook, `weatheraudit.py`, `robustness_checks.py` and `cache.zip` in the same directory. Install `requirements.txt`, then run all cells; the script alternative is `python weatheraudit.py`. A clean-directory review run used only the shipped cache, **denied every HTTP request**, and completed in 89.08 seconds with **24 cells, 124 outputs, 10 figures and no errors**. Colab users should upload both Python files and the cache in the Files panel before running. Saved outputs require no execution to view.
+
+`requirements-lock.txt` records the tested package versions; other versions may change fitted model values. `cache_manifest.json` records hashes of all 436 cached files. `results_v4.json` holds the original results; `robustness_results.json` and `detector_improvement_results.json` hold the added checks. Both protocol JSON files record fixed settings. `REPRODUCIBILITY.md` gives the exact release checks. The optional TimesFM experiment has its own dependencies and is not part of this verified run.
+
+## Sources and credits
+
+* NOAA GHCN-Daily observations and flag definitions: https://registry.opendata.aws/noaa-ghcn/ ; https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt . Station IDs: Quzhou CHM00058633, Shanghai CHM00058362, Hotan CHM00051828, Osaka JAM00047772, Chuncheon KSM00047101, Gangneung KSM00047105, Pohang KSM00047138, Busan KSM00047159.
+* Open-Meteo Historical Forecast, Previous Runs and ERA5 Archive APIs (CC BY 4.0): https://open-meteo.com/en/docs/historical-forecast-api ; https://open-meteo.com/en/docs/previous-runs-api ; https://open-meteo.com/en/docs/historical-weather-api . The historical forecast archive is stitched from recent runs; it is not a fixed day-ahead forecast.
+* Models and libraries: https://scikit-learn.org/ ; https://pandas.pydata.org/ ; https://numpy.org/ ; https://scipy.org/ ; https://matplotlib.org/ ; https://requests.readthedocs.io/ . Interval background: Angelopoulos and Bates, https://arxiv.org/abs/2107.07511 .
+* Exploratory TimesFM model: https://huggingface.co/google/timesfm-2.5-200m-pytorch ; https://github.com/google-research/timesfm ; https://pytorch.org/ . Its legacy results are not a controlled benchmark; see `TIMESFM_NOTE.md`.
+* AI assistance: Claude (https://claude.ai/) and WorkBuddy (https://www.codebuddy.cn/work/) were used heavily for coding, experiments and drafting. OpenAI Codex (https://openai.com/codex/) performed final code, reproducibility and text review, and assisted with the demo video. The entrant chose the question and directed the work. The video uses synthetic narration and generated graphics/audio, with production credits accompanying the video.
+
+![Four-station retrospective provenance check](weather_crossexam.png)
+
+![Correction methods and empirical interval coverage](weather_fair.png)

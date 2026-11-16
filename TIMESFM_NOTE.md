@@ -1,0 +1,11 @@
+# TimesFM exploratory experiment
+
+The values in `tm_results.json` are retained as a record of the original experiment, not as a controlled benchmark or a main project result. They are **not produced by the main notebook**.
+
+The original run generated the entire 306-date test period at once from the last 512 available TMAX observations. The weather-forecast archive instead stitches recent short-lead runs. Comparing those errors confounds forecast horizon and available information. The original code also dropped missing dates before constructing the context, so irregular observations were presented to TimesFM as equally spaced daily values, especially problematic for Osaka. The accompanying climatology is a long-term station calendar-day mean from all pre-test years; it is not uniformly a 20-year mean.
+
+These limitations prevent a conclusion that physical models beat pattern learning. In the archived legacy run, MAE was 3.29–4.98 °C, but those numbers do not describe the repaired script below. A proper comparison must preserve calendar spacing, use the same issue date, forecast horizon and scoring dates, and avoid access to future context. Such a benchmark remains future work.
+
+`tm_experiment.py` has been repaired to work from its own directory and extract the shipped station caches. It now preserves the calendar grid, carries missing past observations forward without using future values, and refuses sites with inadequate recent coverage. It writes **`tm_results_repaired.json`**, preserving the legacy results. It defaults to downloading the checkpoint as required; `--local-files-only` uses an existing Hugging Face cache. It remains a long-horizon exploratory exercise, not a fair day-ahead forecast comparison. The repaired model run has not been executed during final review.
+
+Install the main requirements plus `requirements-timesfm.txt`, then run `python tm_experiment.py`. The model checkpoint is approximately 900 MB and may require several GB of memory. Model source: https://huggingface.co/google/timesfm-2.5-200m-pytorch ; library: https://github.com/google-research/timesfm . The original run used TimesFM 2.5, 200M parameters, 512 context observations and a 306-date scored horizon.

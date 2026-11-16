@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "block_observations": 28,
+  "permutations": 999,
+  "alpha_per_pair": 0.016666666666666666,
+  "search": "one root split per pair; no recursive candidate searches",
+  "local_effective_block": 28,
+  "minimum_jump_C": 0.5,
+  "minimum_t_like": 2.0,
+  "heldout_seed_base": 20301116,
+  "trials_per_phi": 50,
+  "ar_coefficients": [
+    0.3,
+    0.8
+  ],
+  "synthetic_step_C": [
+    -2.0,
+    2.0
+  ],
+  "synthetic_step_targets": [
+    "station",
+    "forecast",
+    "reanalysis"
+  ],
+  "step_trials_per_target": 10,
+  "step_phi": 0.8,
+  "step_onset_fraction": 0.5,
+  "development": "Specified once after inspecting original-detector failures; evaluated on different random seeds. No further tuning.",
+  "qualification": "Conservative exploratory alternative, not a calibrated operational alarm or independent real-world validation."
+}

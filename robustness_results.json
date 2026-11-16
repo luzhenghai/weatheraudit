@@ -1,0 +1,2802 @@
+{
+  "protocol": {
+    "version": 1,
+    "seed": 20261116,
+    "reporting_lags": [
+      1,
+      8,
+      14,
+      30,
+      60
+    ],
+    "local_utc_offsets": {
+      "Quzhou": 8,
+      "Shanghai": 8,
+      "Hotan": 8,
+      "Osaka": 9,
+      "Chuncheon": 9,
+      "Gangneung": 9,
+      "Pohang": 9,
+      "Busan": 9
+    },
+    "station_label_shifts": [
+      -1,
+      0,
+      1
+    ],
+    "calendar_bootstrap_draws": 9999,
+    "comparison_family": "8 rolling-vs-raw plus 8 boosting-vs-rolling",
+    "multiplicity": "Holm, two-sided approximate centered calendar-week bootstrap p-values",
+    "signed_steps": [
+      -2.0,
+      -0.5,
+      0.5,
+      2.0
+    ],
+    "onset_fractions": [
+      0.35,
+      0.5,
+      0.65
+    ],
+    "null_trials_per_setting": 50,
+    "null_ar_coefficients": [
+      0.3,
+      0.8
+    ],
+    "null_days": 730,
+    "detector": "original detector and thresholds, unchanged",
+    "status": "additional retrospective checks; no settings selected from these results"
+  },
+  "delay": {
+    "Quzhou": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 254,
+          "raw_mae": 1.858,
+          "rolling_mae": 1.141
+        },
+        {
+          "lag_days": 8,
+          "n": 254,
+          "raw_mae": 1.858,
+          "rolling_mae": 1.196
+        },
+        {
+          "lag_days": 14,
+          "n": 254,
+          "raw_mae": 1.858,
+          "rolling_mae": 1.202
+        },
+        {
+          "lag_days": 30,
+          "n": 254,
+          "raw_mae": 1.858,
+          "rolling_mae": 1.188
+        },
+        {
+          "lag_days": 60,
+          "n": 254,
+          "raw_mae": 1.858,
+          "rolling_mae": 1.386
+        }
+      ],
+      "no_test_update_mae": 2.9,
+      "n": 254
+    },
+    "Shanghai": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 256,
+          "raw_mae": 0.98,
+          "rolling_mae": 0.839
+        },
+        {
+          "lag_days": 8,
+          "n": 256,
+          "raw_mae": 0.98,
+          "rolling_mae": 0.862
+        },
+        {
+          "lag_days": 14,
+          "n": 256,
+          "raw_mae": 0.98,
+          "rolling_mae": 0.886
+        },
+        {
+          "lag_days": 30,
+          "n": 256,
+          "raw_mae": 0.98,
+          "rolling_mae": 0.889
+        },
+        {
+          "lag_days": 60,
+          "n": 256,
+          "raw_mae": 0.98,
+          "rolling_mae": 0.897
+        }
+      ],
+      "no_test_update_mae": 1.865,
+      "n": 256
+    },
+    "Osaka": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 300,
+          "raw_mae": 1.525,
+          "rolling_mae": 0.667
+        },
+        {
+          "lag_days": 8,
+          "n": 300,
+          "raw_mae": 1.525,
+          "rolling_mae": 0.684
+        },
+        {
+          "lag_days": 14,
+          "n": 300,
+          "raw_mae": 1.525,
+          "rolling_mae": 0.696
+        },
+        {
+          "lag_days": 30,
+          "n": 300,
+          "raw_mae": 1.525,
+          "rolling_mae": 0.722
+        },
+        {
+          "lag_days": 60,
+          "n": 300,
+          "raw_mae": 1.525,
+          "rolling_mae": 0.761
+        }
+      ],
+      "no_test_update_mae": 0.671,
+      "n": 300
+    },
+    "Hotan": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 258,
+          "raw_mae": 1.175,
+          "rolling_mae": 0.855
+        },
+        {
+          "lag_days": 8,
+          "n": 258,
+          "raw_mae": 1.175,
+          "rolling_mae": 0.922
+        },
+        {
+          "lag_days": 14,
+          "n": 258,
+          "raw_mae": 1.175,
+          "rolling_mae": 0.911
+        },
+        {
+          "lag_days": 30,
+          "n": 258,
+          "raw_mae": 1.175,
+          "rolling_mae": 0.979
+        },
+        {
+          "lag_days": 60,
+          "n": 258,
+          "raw_mae": 1.175,
+          "rolling_mae": 1.054
+        }
+      ],
+      "no_test_update_mae": 1.495,
+      "n": 258
+    },
+    "Chuncheon": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 300,
+          "raw_mae": 1.578,
+          "rolling_mae": 1.068
+        },
+        {
+          "lag_days": 8,
+          "n": 300,
+          "raw_mae": 1.578,
+          "rolling_mae": 1.116
+        },
+        {
+          "lag_days": 14,
+          "n": 300,
+          "raw_mae": 1.578,
+          "rolling_mae": 1.139
+        },
+        {
+          "lag_days": 30,
+          "n": 300,
+          "raw_mae": 1.578,
+          "rolling_mae": 1.246
+        },
+        {
+          "lag_days": 60,
+          "n": 300,
+          "raw_mae": 1.578,
+          "rolling_mae": 1.373
+        }
+      ],
+      "no_test_update_mae": 1.192,
+      "n": 300
+    },
+    "Gangneung": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 299,
+          "raw_mae": 1.245,
+          "rolling_mae": 1.014
+        },
+        {
+          "lag_days": 8,
+          "n": 299,
+          "raw_mae": 1.245,
+          "rolling_mae": 1.023
+        },
+        {
+          "lag_days": 14,
+          "n": 299,
+          "raw_mae": 1.245,
+          "rolling_mae": 1.042
+        },
+        {
+          "lag_days": 30,
+          "n": 299,
+          "raw_mae": 1.245,
+          "rolling_mae": 1.094
+        },
+        {
+          "lag_days": 60,
+          "n": 299,
+          "raw_mae": 1.245,
+          "rolling_mae": 1.217
+        }
+      ],
+      "no_test_update_mae": 1.081,
+      "n": 299
+    },
+    "Pohang": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 300,
+          "raw_mae": 1.7,
+          "rolling_mae": 0.905
+        },
+        {
+          "lag_days": 8,
+          "n": 300,
+          "raw_mae": 1.7,
+          "rolling_mae": 0.963
+        },
+        {
+          "lag_days": 14,
+          "n": 300,
+          "raw_mae": 1.7,
+          "rolling_mae": 0.986
+        },
+        {
+          "lag_days": 30,
+          "n": 300,
+          "raw_mae": 1.7,
+          "rolling_mae": 0.996
+        },
+        {
+          "lag_days": 60,
+          "n": 300,
+          "raw_mae": 1.7,
+          "rolling_mae": 0.995
+        }
+      ],
+      "no_test_update_mae": 0.967,
+      "n": 300
+    },
+    "Busan": {
+      "rows": [
+        {
+          "lag_days": 1,
+          "n": 300,
+          "raw_mae": 1.896,
+          "rolling_mae": 1.03
+        },
+        {
+          "lag_days": 8,
+          "n": 300,
+          "raw_mae": 1.896,
+          "rolling_mae": 1.053
+        },
+        {
+          "lag_days": 14,
+          "n": 300,
+          "raw_mae": 1.896,
+          "rolling_mae": 1.071
+        },
+        {
+          "lag_days": 30,
+          "n": 300,
+          "raw_mae": 1.896,
+          "rolling_mae": 1.095
+        },
+        {
+          "lag_days": 60,
+          "n": 300,
+          "raw_mae": 1.896,
+          "rolling_mae": 1.143
+        }
+      ],
+      "no_test_update_mae": 1.093,
+      "n": 300
+    }
+  },
+  "day_windows": {
+    "Quzhou": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 225,
+          "raw_mae": 2.06,
+          "rolling_mae": 1.507
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 225,
+          "raw_mae": 2.06,
+          "rolling_mae": 1.507
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": -1,
+          "n": 225,
+          "raw_mae": 3.083,
+          "rolling_mae": 2.852
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 1,
+          "n": 225,
+          "raw_mae": 3.4,
+          "rolling_mae": 2.862
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Shanghai": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 231,
+          "raw_mae": 1.118,
+          "rolling_mae": 1.03
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 231,
+          "raw_mae": 1.118,
+          "rolling_mae": 1.03
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": -1,
+          "n": 231,
+          "raw_mae": 2.437,
+          "rolling_mae": 2.437
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 1,
+          "n": 231,
+          "raw_mae": 2.462,
+          "rolling_mae": 2.372
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Osaka": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.743,
+          "rolling_mae": 1.303
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.737,
+          "rolling_mae": 1.311
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": -1,
+          "n": 297,
+          "raw_mae": 2.521,
+          "rolling_mae": 2.235
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 1,
+          "n": 297,
+          "raw_mae": 2.468,
+          "rolling_mae": 2.278
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Hotan": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 237,
+          "raw_mae": 1.401,
+          "rolling_mae": 1.256
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 237,
+          "raw_mae": 1.401,
+          "rolling_mae": 1.256
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": -1,
+          "n": 237,
+          "raw_mae": 2.466,
+          "rolling_mae": 2.534
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 1,
+          "n": 237,
+          "raw_mae": 2.697,
+          "rolling_mae": 2.478
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Chuncheon": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.824,
+          "rolling_mae": 1.414
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.824,
+          "rolling_mae": 1.415
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": -1,
+          "n": 297,
+          "raw_mae": 2.918,
+          "rolling_mae": 2.621
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 1,
+          "n": 297,
+          "raw_mae": 2.974,
+          "rolling_mae": 2.859
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Gangneung": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 294,
+          "raw_mae": 1.533,
+          "rolling_mae": 1.339
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 0,
+          "n": 294,
+          "raw_mae": 1.528,
+          "rolling_mae": 1.336
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": -1,
+          "n": 294,
+          "raw_mae": 2.881,
+          "rolling_mae": 2.798
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 1,
+          "n": 294,
+          "raw_mae": 2.908,
+          "rolling_mae": 2.816
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Pohang": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.781,
+          "rolling_mae": 1.308
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 1.78,
+          "rolling_mae": 1.32
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": -1,
+          "n": 297,
+          "raw_mae": 2.871,
+          "rolling_mae": 2.589
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 1,
+          "n": 297,
+          "raw_mae": 2.676,
+          "rolling_mae": 2.523
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    },
+    "Busan": {
+      "rows": [
+        {
+          "definition": "legacy_UTC+8",
+          "utc_offset_hours": 8,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 2.021,
+          "rolling_mae": 1.295
+        },
+        {
+          "definition": "station_local",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 0,
+          "n": 297,
+          "raw_mae": 2.023,
+          "rolling_mae": 1.289
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": -1,
+          "n": 297,
+          "raw_mae": 2.617,
+          "rolling_mae": 2.093
+        },
+        {
+          "definition": "local_shifted_station_labels",
+          "utc_offset_hours": 9,
+          "station_label_shift_days": 1,
+          "n": 297,
+          "raw_mae": 2.597,
+          "rolling_mae": 2.17
+        }
+      ],
+      "warning": "Local civil-day aggregation does not establish NOAA observation-day timing."
+    }
+  },
+  "multiplicity": {
+    "family_size": 16,
+    "alpha": 0.05,
+    "rows": [
+      {
+        "station": "Quzhou",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.6618,
+        "lo": 0.4268,
+        "hi": 0.913,
+        "p_approx": 0.0001,
+        "calendar_weeks": 41,
+        "n": 254,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Quzhou",
+        "comparison": "boosting_vs_rolling",
+        "gain": -0.1164,
+        "lo": -0.2339,
+        "hi": -0.0004,
+        "p_approx": 0.0508,
+        "calendar_weeks": 41,
+        "n": 254,
+        "p_holm": 0.264,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Shanghai",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.1185,
+        "lo": 0.022,
+        "hi": 0.2235,
+        "p_approx": 0.0218,
+        "calendar_weeks": 41,
+        "n": 256,
+        "p_holm": 0.1526,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Shanghai",
+        "comparison": "boosting_vs_rolling",
+        "gain": -0.0746,
+        "lo": -0.2136,
+        "hi": 0.0371,
+        "p_approx": 0.2386,
+        "calendar_weeks": 41,
+        "n": 256,
+        "p_holm": 0.9544,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Osaka",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.8412,
+        "lo": 0.6914,
+        "hi": 0.981,
+        "p_approx": 0.0001,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Osaka",
+        "comparison": "boosting_vs_rolling",
+        "gain": 0.0354,
+        "lo": 0.0021,
+        "hi": 0.0703,
+        "p_approx": 0.044,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.264,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Hotan",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.2532,
+        "lo": 0.1032,
+        "hi": 0.4065,
+        "p_approx": 0.001,
+        "calendar_weeks": 41,
+        "n": 258,
+        "p_holm": 0.01,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Hotan",
+        "comparison": "boosting_vs_rolling",
+        "gain": -0.1283,
+        "lo": -0.212,
+        "hi": -0.0479,
+        "p_approx": 0.0025,
+        "calendar_weeks": 41,
+        "n": 258,
+        "p_holm": 0.0225,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Chuncheon",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.4619,
+        "lo": 0.3176,
+        "hi": 0.6127,
+        "p_approx": 0.0001,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Chuncheon",
+        "comparison": "boosting_vs_rolling",
+        "gain": 0.0382,
+        "lo": -0.0849,
+        "hi": 0.163,
+        "p_approx": 0.5447,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 1.0,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Gangneung",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.2224,
+        "lo": 0.1373,
+        "hi": 0.3108,
+        "p_approx": 0.0001,
+        "calendar_weeks": 44,
+        "n": 299,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Gangneung",
+        "comparison": "boosting_vs_rolling",
+        "gain": -0.0035,
+        "lo": -0.0839,
+        "hi": 0.0722,
+        "p_approx": 0.9322,
+        "calendar_weeks": 44,
+        "n": 299,
+        "p_holm": 1.0,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Pohang",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.7366,
+        "lo": 0.5212,
+        "hi": 0.9419,
+        "p_approx": 0.0001,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Pohang",
+        "comparison": "boosting_vs_rolling",
+        "gain": 0.1232,
+        "lo": 0.0335,
+        "hi": 0.2128,
+        "p_approx": 0.0066,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.0528,
+        "supported_after_holm": false
+      },
+      {
+        "station": "Busan",
+        "comparison": "rolling_vs_raw",
+        "gain": 0.8437,
+        "lo": 0.6646,
+        "hi": 1.0175,
+        "p_approx": 0.0001,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.0016,
+        "supported_after_holm": true
+      },
+      {
+        "station": "Busan",
+        "comparison": "boosting_vs_rolling",
+        "gain": 0.0413,
+        "lo": -0.0433,
+        "hi": 0.1226,
+        "p_approx": 0.3191,
+        "calendar_weeks": 44,
+        "n": 300,
+        "p_holm": 0.9573,
+        "supported_after_holm": false
+      }
+    ],
+    "qualification": "Exploratory approximate resampling inference; not a distribution-free or prospective guarantee."
+  },
+  "signed_injection": {
+    "rows": [
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Quzhou",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-17",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-29",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-06-01",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Shanghai",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-16",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "station changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": false,
+        "correct": false,
+        "control_already_near": false,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.35,
+        "injected_at": "2022-12-28",
+        "detected": true,
+        "correct": true,
+        "control_already_near": false,
+        "incremental_detected": true,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": false,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": false,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.5,
+        "injected_at": "2023-05-31",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "station",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "forecast",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "forecast changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": -0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": false,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": null
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 0.5,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": false,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "ambiguous"
+      },
+      {
+        "station": "Hotan",
+        "target": "reanalysis",
+        "step_C": 2.0,
+        "onset_fraction": 0.65,
+        "injected_at": "2023-11-15",
+        "detected": true,
+        "correct": true,
+        "control_already_near": true,
+        "incremental_detected": false,
+        "verdict": "reanalysis changed"
+      }
+    ],
+    "summary": [
+      {
+        "step_C": -2.0,
+        "trials": 27,
+        "detected": 26,
+        "correct": 18,
+        "incremental_detected": 20,
+        "controls_already_near": 6
+      },
+      {
+        "step_C": -0.5,
+        "trials": 27,
+        "detected": 9,
+        "correct": 0,
+        "incremental_detected": 5,
+        "controls_already_near": 6
+      },
+      {
+        "step_C": 0.5,
+        "trials": 27,
+        "detected": 12,
+        "correct": 2,
+        "incremental_detected": 7,
+        "controls_already_near": 6
+      },
+      {
+        "step_C": 2.0,
+        "trials": 27,
+        "detected": 26,
+        "correct": 19,
+        "incremental_detected": 20,
+        "controls_already_near": 6
+      }
+    ],
+    "qualification": "Real background may already contain an event; nearby control events are reported, not counted as newly recovered steps."
+  },
+  "synthetic_null": {
+    "summary": [
+      {
+        "phi": 0.3,
+        "trials": 50,
+        "runs_with_any_false_event": 0,
+        "runs_with_named_false_event": 0,
+        "any_event_rate": 0.0,
+        "any_event_rate_wilson95": [
+          0.0,
+          0.0713
+        ]
+      },
+      {
+        "phi": 0.8,
+        "trials": 50,
+        "runs_with_any_false_event": 16,
+        "runs_with_named_false_event": 10,
+        "any_event_rate": 0.32,
+        "any_event_rate_wilson95": [
+          0.2076,
+          0.4581
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "phi": 0.3,
+        "trial": 0,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 1,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 2,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 3,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 4,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 5,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 6,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 7,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 8,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 9,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 10,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 11,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 12,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 13,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 14,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 15,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 16,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 17,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 18,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 19,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 20,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 21,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 22,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 23,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 24,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 25,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 26,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 27,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 28,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 29,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 30,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 31,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 32,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 33,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 34,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 35,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 36,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 37,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 38,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 39,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 40,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 41,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 42,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 43,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 44,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 45,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 46,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 47,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 48,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.3,
+        "trial": 49,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 0,
+        "events": 4,
+        "named_false_events": 2
+      },
+      {
+        "phi": 0.8,
+        "trial": 1,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 2,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 3,
+        "events": 2,
+        "named_false_events": 2
+      },
+      {
+        "phi": 0.8,
+        "trial": 4,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 5,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 6,
+        "events": 2,
+        "named_false_events": 1
+      },
+      {
+        "phi": 0.8,
+        "trial": 7,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 8,
+        "events": 3,
+        "named_false_events": 2
+      },
+      {
+        "phi": 0.8,
+        "trial": 9,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 10,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 11,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 12,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 13,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 14,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 15,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 16,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 17,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 18,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 19,
+        "events": 2,
+        "named_false_events": 1
+      },
+      {
+        "phi": 0.8,
+        "trial": 20,
+        "events": 2,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 21,
+        "events": 2,
+        "named_false_events": 2
+      },
+      {
+        "phi": 0.8,
+        "trial": 22,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 23,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 24,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 25,
+        "events": 1,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 26,
+        "events": 1,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 27,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 28,
+        "events": 1,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 29,
+        "events": 1,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 30,
+        "events": 2,
+        "named_false_events": 2
+      },
+      {
+        "phi": 0.8,
+        "trial": 31,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 32,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 33,
+        "events": 1,
+        "named_false_events": 1
+      },
+      {
+        "phi": 0.8,
+        "trial": 34,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 35,
+        "events": 1,
+        "named_false_events": 1
+      },
+      {
+        "phi": 0.8,
+        "trial": 36,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 37,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 38,
+        "events": 2,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 39,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 40,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 41,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 42,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 43,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 44,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 45,
+        "events": 1,
+        "named_false_events": 1
+      },
+      {
+        "phi": 0.8,
+        "trial": 46,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 47,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 48,
+        "events": 0,
+        "named_false_events": 0
+      },
+      {
+        "phi": 0.8,
+        "trial": 49,
+        "events": 0,
+        "named_false_events": 0
+      }
+    ],
+    "generator": "730 days; stationary Gaussian AR(1) source errors, shared forecast/reanalysis component; no injected step or changing bias",
+    "qualification": "False-event rates apply only to these specified simulations, not to real station records."
+  }
+}

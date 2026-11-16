@@ -1,0 +1,2557 @@
+{
+  "protocol": {
+    "version": 1,
+    "block_observations": 28,
+    "permutations": 999,
+    "alpha_per_pair": 0.016666666666666666,
+    "search": "one root split per pair; no recursive candidate searches",
+    "local_effective_block": 28,
+    "minimum_jump_C": 0.5,
+    "minimum_t_like": 2.0,
+    "heldout_seed_base": 20301116,
+    "trials_per_phi": 50,
+    "ar_coefficients": [
+      0.3,
+      0.8
+    ],
+    "synthetic_step_C": [
+      -2.0,
+      2.0
+    ],
+    "synthetic_step_targets": [
+      "station",
+      "forecast",
+      "reanalysis"
+    ],
+    "step_trials_per_target": 10,
+    "step_phi": 0.8,
+    "step_onset_fraction": 0.5,
+    "development": "Specified once after inspecting original-detector failures; evaluated on different random seeds. No further tuning.",
+    "qualification": "Conservative exploratory alternative, not a calibrated operational alarm or independent real-world validation."
+  },
+  "null_summary": [
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trials": 50,
+      "false_event_runs": 0,
+      "named_false_event_runs": 0,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.0713
+      ]
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trials": 50,
+      "false_event_runs": 0,
+      "named_false_event_runs": 0,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.0713
+      ]
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trials": 50,
+      "false_event_runs": 20,
+      "named_false_event_runs": 13,
+      "rate": 0.4,
+      "wilson95": [
+        0.2761,
+        0.5382
+      ]
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trials": 50,
+      "false_event_runs": 0,
+      "named_false_event_runs": 0,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.0713
+      ]
+    }
+  ],
+  "null_rows": [
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 0,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 0,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 1,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 1,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 2,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 2,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 3,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 3,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 4,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 4,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 5,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 5,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 6,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 6,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 7,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 7,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 8,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 8,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 9,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 9,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 10,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 10,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 11,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 11,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 12,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 12,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 13,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 13,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 14,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 14,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 15,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 15,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 16,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 16,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 17,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 17,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 18,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 18,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 19,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 19,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 20,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 20,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 21,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 21,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 22,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 22,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 23,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 23,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 24,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 24,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 25,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 25,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 26,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 26,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 27,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 27,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 28,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 28,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 29,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 29,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 30,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 30,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 31,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 31,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 32,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 32,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 33,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 33,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 34,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 34,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 35,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 35,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 36,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 36,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 37,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 37,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 38,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 38,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 39,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 39,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 40,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 40,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 41,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 41,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 42,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 42,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 43,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 43,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 44,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 44,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 45,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 45,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 46,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 46,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 47,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 47,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 48,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 48,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.3,
+      "trial": 49,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.3,
+      "trial": 49,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 0,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 0,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 1,
+      "events": 1,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 1,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 2,
+      "events": 2,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 2,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 3,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 3,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 4,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 4,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 5,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 5,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 6,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 6,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 7,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 7,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 8,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 8,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 9,
+      "events": 1,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 9,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 10,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 10,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 11,
+      "events": 2,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 11,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 12,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 12,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 13,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 13,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 14,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 14,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 15,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 15,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 16,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 16,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 17,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 17,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 18,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 18,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 19,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 19,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 20,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 20,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 21,
+      "events": 1,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 21,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 22,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 22,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 23,
+      "events": 3,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 23,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 24,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 24,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 25,
+      "events": 5,
+      "named": 4
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 25,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 26,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 26,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 27,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 27,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 28,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 28,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 29,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 29,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 30,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 30,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 31,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 31,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 32,
+      "events": 2,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 32,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 33,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 33,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 34,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 34,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 35,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 35,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 36,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 36,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 37,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 37,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 38,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 38,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 39,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 39,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 40,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 40,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 41,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 41,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 42,
+      "events": 2,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 42,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 43,
+      "events": 1,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 43,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 44,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 44,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 45,
+      "events": 2,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 45,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 46,
+      "events": 2,
+      "named": 1
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 46,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 47,
+      "events": 1,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 47,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 48,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 48,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "original",
+      "phi": 0.8,
+      "trial": 49,
+      "events": 0,
+      "named": 0
+    },
+    {
+      "detector": "conservative",
+      "phi": 0.8,
+      "trial": 49,
+      "events": 0,
+      "named": 0
+    }
+  ],
+  "step_summary": [
+    {
+      "detector": "original",
+      "step_C": -2.0,
+      "trials": 30,
+      "detected": 30,
+      "correct": 30
+    },
+    {
+      "detector": "original",
+      "step_C": 2.0,
+      "trials": 30,
+      "detected": 30,
+      "correct": 29
+    },
+    {
+      "detector": "conservative",
+      "step_C": -2.0,
+      "trials": 30,
+      "detected": 30,
+      "correct": 30
+    },
+    {
+      "detector": "conservative",
+      "step_C": 2.0,
+      "trials": 30,
+      "detected": 30,
+      "correct": 30
+    }
+  ],
+  "step_rows": [
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 0,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 1,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 2,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 3,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 4,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 5,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": false
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 6,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 7,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 8,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "station",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "forecast",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": -2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "original",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    },
+    {
+      "detector": "conservative",
+      "target": "reanalysis",
+      "step_C": 2.0,
+      "trial": 9,
+      "detected": true,
+      "correct": true
+    }
+  ],
+  "provenance": [
+    {
+      "station": "Quzhou",
+      "scored": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2024-12-22",
+          "off_days": 10,
+          "verdict": "ambiguous",
+          "correct": false
+        }
+      ],
+      "events": [
+        {
+          "date": "2024-12-22",
+          "verdict": "ambiguous"
+        }
+      ]
+    },
+    {
+      "station": "Shanghai",
+      "scored": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2024-12-31",
+          "off_days": 1,
+          "verdict": "station changed",
+          "correct": true
+        }
+      ],
+      "events": [
+        {
+          "date": "2024-12-31",
+          "verdict": "station changed"
+        }
+      ]
+    },
+    {
+      "station": "Osaka",
+      "scored": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": null,
+          "off_days": null,
+          "verdict": null,
+          "correct": false
+        }
+      ],
+      "events": []
+    },
+    {
+      "station": "Hotan",
+      "scored": [
+        {
+          "switch": "2025-01-01",
+          "flag_from": "S|",
+          "flag_to": "2|H",
+          "found": "2025-01-22",
+          "off_days": 21,
+          "verdict": "station changed",
+          "correct": true
+        }
+      ],
+      "events": [
+        {
+          "date": "2024-03-21",
+          "verdict": "ambiguous"
+        },
+        {
+          "date": "2025-01-22",
+          "verdict": "station changed"
+        }
+      ]
+    }
+  ]
+}
